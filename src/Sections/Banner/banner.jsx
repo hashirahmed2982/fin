@@ -36,7 +36,7 @@ const Banner = () => {
 
       {/* Text Content */}
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         sx={{
           position: "relative",
           zIndex: 2, // Above the stars

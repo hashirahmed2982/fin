@@ -1,35 +1,76 @@
 import { Box, Typography, Container, Grid } from "@mui/material";
 
+// Custom styles based on branding guidelines
+const customStyles = {
+  container: {
+    height: "100vh",
+    width: "100%",
+    color: "white",
+    py: 4,
+    textAlign: "center",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    // Set a background color to match your brand
+  },
+  insightBox: {
+    backgroundColor: "#1E1E1E", // As per your brand's secondary colors
+    color: "white",
+    borderRadius: 2,
+    overflow: "hidden",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
+    transition: "transform 0.3s ease-in-out",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  },
+  image: {
+    width: "100%",
+    height: "auto",
+  },
+  boxPadding: {
+    padding: 2,
+  },
+  title: {
+    fontFamily: "Polysans Bulky, sans-serif", // Custom font for headlines
+    marginBottom: "16px",
+  },
+  subtitle: {
+    fontFamily: "Grotesque, sans-serif", // Custom font for body text
+    fontWeight: 500, // Adjust font weight if needed
+    color: "#f5f5f5", // Slightly lighter color for subtitles
+  },
+  description: {
+    fontFamily: "Grotesque, sans-serif", // Custom font for body text
+    marginBottom: "8px",
+    color: "#cfcfcf", // Lighter color for better readability
+  },
+  caption: {
+    fontFamily: "Grotesque, sans-serif", // Custom font for body text
+    color: "#a9a9a9", // Even lighter for less emphasis
+  },
+};
+
 const InsightBox = ({ imageUrl, title, subtitle, description, date, timeToRead }) => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#1E1E1E",
-        color: "white",
-        borderRadius: 2,
-        overflow: "hidden", // Ensures the border radius is applied to the image as well
-        boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-      }}
-    >
-      <img 
-        src={imageUrl} 
-        alt={title} 
-        style={{
-          width: "100%", 
-          height: "auto",
-        }} 
+    <Box sx={customStyles.insightBox}>
+      <img
+        src={imageUrl}
+        alt={title}
+        style={customStyles.image}
       />
-      <Box sx={{ padding: 2 }}>
-        <Typography variant="subtitle2" gutterBottom>
+      <Box sx={customStyles.boxPadding}>
+        <Typography variant="subtitle2" gutterBottom sx={customStyles.subtitle}>
           {subtitle}
         </Typography>
-        <Typography variant="h6" component="h2" gutterBottom>
+        <Typography variant="h6" component="h2" gutterBottom sx={customStyles.title}>
           {title}
         </Typography>
-        <Typography variant="body2" gutterBottom>
+        <Typography variant="body2" gutterBottom sx={customStyles.description}>
           {description}
         </Typography>
-        <Typography variant="caption" display="block" gutterBottom>
+        <Typography variant="caption" display="block" gutterBottom sx={customStyles.caption}>
           {date} · {timeToRead} min read
         </Typography>
       </Box>
@@ -39,27 +80,19 @@ const InsightBox = ({ imageUrl, title, subtitle, description, date, timeToRead }
 
 const Insights = () => {
   return (
-    <Box
-      sx={{
-        height: "100vh", // Full viewport height
-        width: "100%", // Full viewport width
-        color: "white",
-        py: 4,
-        textAlign: "center",
-        display: "flex", // Flexbox for vertical and horizontal centering
-        alignItems: "center", // Center items vertically
-        justifyContent: "center", // Center items horizontally
-        flexDirection: "column",
-      }}
-    >
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h1" gutterBottom>
+    <Box sx={customStyles.container}>
+      <Container maxWidth="xl">
+        <Typography variant="h6"
+          sx={{  color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
           Insights
         </Typography>
-        <Typography variant="h6" paragraph>
-          Finwing Insights: Your gateway to real-time analysis, expert reviews, and macroeconomic perspectives shaping the Web 3.0 landscape.
+        <Typography  variant="h1"
+          fontWeight="bold"
+          mb={2}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}>
+          Your gateway to real-time analysis, expert reviews, and macroeconomic perspectives shaping the Web 3.0 landscape.
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={6}>
           <Grid item xs={12} sm={4}>
             <InsightBox
               imageUrl="https://insights.glassnode.com/content/images/2024/08/Group-137691791.png"
@@ -83,7 +116,7 @@ const Insights = () => {
           <Grid item xs={12} sm={4}>
             <InsightBox
               imageUrl="https://insights.glassnode.com/content/images/size/w2000/2024/08/Coinbase-Q3_png.png"
-              title="Coinbase + Glassnode: The Q3 Guide to Crypto Markets"
+              title="Coinbase: The Q3 Guide to Crypto Markets"
               subtitle="Bitcoin Analysis & Research"
               description="In the Q3 'Guide to Crypto Markets' by Glassnode and Coinbase Institutional, we explore the rapid..."
               date="Jul 25, 2024"

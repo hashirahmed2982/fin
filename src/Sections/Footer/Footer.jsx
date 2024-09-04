@@ -34,7 +34,7 @@ const Footer = () => {
       {}
       <Box
         component="img"
-        src="/public/planet1.png"
+        src="/planet1.png"
         alt="Floating planet1"
         sx={{
           position: 'absolute',
@@ -48,7 +48,7 @@ const Footer = () => {
       />
       <Box
         component="img"
-        src="/public/planet2.png"
+        src="/planet2.png"
         alt="Floating planet2"
         sx={{
           position: 'absolute',
@@ -62,7 +62,7 @@ const Footer = () => {
       />
       <Box
         component="img"
-        src="/public/pose2.png"
+        src="/pose2.png"
         alt="Floating pose2"
         sx={{
           position: 'absolute',
@@ -76,7 +76,7 @@ const Footer = () => {
       />
       <Box
         component="img"
-        src="/public/pose3.png"
+        src="/pose3.png"
         alt="Floating pose3"
         sx={{
           position: 'absolute',
@@ -90,7 +90,7 @@ const Footer = () => {
       />
       <Box
         component="img"
-        src="/public/pose5.png"
+        src="/pose5.png"
         alt="Floating pose5"
         sx={{
           position: 'absolute',
