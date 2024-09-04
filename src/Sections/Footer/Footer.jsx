@@ -1,116 +1,75 @@
-import { Box, Typography, Container } from "@mui/material";
-
-const floatingAnimation = {
-  '@keyframes float': {
-    '0%': {
-      transform: 'translateY(0px)',
-    },
-    '50%': {
-      transform: 'translateY(-20px)',
-    },
-    '100%': {
-      transform: 'translateY(0px)',
-    },
-  },
-};
+// src/components/Footer.jsx
+import React from 'react';
+import { Box, Typography, Link, IconButton, Grid, TextField, Button } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import RedditIcon from '@mui/icons-material/Reddit';
+import Logo from '/logo.jpg'; // Import your logo
 
 const Footer = () => {
   return (
-    <Box
-      sx={{
-        height: '90vh',
-        width: '100%', 
-        color: 'white', 
-        py: 4, 
-        textAlign: 'center',
-        display: 'flex', 
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative', 
-        overflow: 'hidden', 
-        ...floatingAnimation,
-      }}
-    >
-      {}
-      <Box
-        component="img"
-        src="/planet1.png"
-        alt="Floating planet1"
-        sx={{
-          position: 'absolute',
-          animation: 'float 4s ease-in-out infinite',
-          width: '100px',
-          height: 'auto',
-          top: '10%',
-          left: '20%', 
-          zIndex: 1,
-        }}
-      />
-      <Box
-        component="img"
-        src="/planet2.png"
-        alt="Floating planet2"
-        sx={{
-          position: 'absolute',
-          animation: 'float 4s ease-in-out infinite',
-          width: '100px',
-          height: 'auto',
-          top: '60%', 
-          left: '10%', 
-          zIndex: 1,
-        }}
-      />
-      <Box
-        component="img"
-        src="/pose2.png"
-        alt="Floating pose2"
-        sx={{
-          position: 'absolute',
-          animation: 'float 4s ease-in-out infinite',
-          width: '100px',
-          height: 'auto',
-          top: '50%', 
-          left: '90%', 
-          zIndex: 1,
-        }}
-      />
-      <Box
-        component="img"
-        src="/pose3.png"
-        alt="Floating pose3"
-        sx={{
-          position: 'absolute',
-          animation: 'float 4s ease-in-out infinite',
-          width: '100px',
-          height: 'auto',
-          top: '70%', 
-          left: '70%', 
-          zIndex: 1,
-        }}
-      />
-      <Box
-        component="img"
-        src="/pose5.png"
-        alt="Floating pose5"
-        sx={{
-          position: 'absolute',
-          animation: 'float 4s ease-in-out infinite',
-          width: '100px',
-          height: 'auto',
-          top: '20%', 
-          left: '80%', 
-          zIndex: 1,
-        }}
-      />
-
-      <Container maxWidth="md" sx={{ zIndex: 2, position: 'relative' }}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          footer
+    <Box sx={{  bgcolor: '#00000',
+        color: '#fff',
+        p: 4,
+        background: `radial-gradient(circle at top center,#0701ef4d 0%,  #000000 40%)`}}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
+          <img src={Logo} alt="Company Logo" style={{ width: '150px', marginBottom: '16px' }} />
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            Managed by Finwing
+          </Typography>
+          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><YouTubeIcon /></IconButton>
+          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><GitHubIcon /></IconButton>
+          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><RedditIcon /></IconButton>
+          <IconButton href="#" color="inherit"><TelegramIcon /></IconButton>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography variant="h6" sx={{ mb: 2 }}>Finwing</Typography>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Grants</Link>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Break</Link>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Media Kit</Link>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Careers</Link>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Disclaimer</Link>
+          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Privacy Policy</Link>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography variant="h6" sx={{ mb: 2 }}>Contact Us</Typography>
+          <form>
+            <TextField
+              fullWidth
+              label="Your Email"
+              variant="filled"
+              size="small"
+              margin="dense"
+              sx={{  borderRadius: '4px' }}
+            />
+            <TextField
+              fullWidth
+              label="Message"
+              variant="filled"
+              size="small"
+              margin="dense"
+              multiline
+              rows={4}
+              sx={{ bgcolor: '#FFF', borderRadius: '4px' }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ mt: 2, bgcolor: '#1e88e5', ':hover': { bgcolor: '#1565c0' } }}
+              fullWidth
+            >
+              Send
+            </Button>
+          </form>
+        </Grid>
+      </Grid>
+      <Box sx={{ textAlign: 'center', mt: 4 }}>
+        <Typography variant="caption">
+          © 2024 Finwing. All rights reserved.
         </Typography>
-        <Typography variant="h6">
-          Empowering Individuals to navigate and thrive in the dynamic realm of Web3.0.
-        </Typography>
-      </Container>
+      </Box>
     </Box>
   );
 };

@@ -3,13 +3,15 @@ import './App.css';
 import Banner from './Sections/Banner/banner';
 import Community from './Sections/Community/Community';
 import Ecosystem from './Sections/Ecosystem/ecosystem';
-import Footer from './Sections/Footer/Footer';
+
 import Insights from './Sections/Insights/insights';
 import Navbar from './Sections/Navbar/navbar';
 import Navigator from './Sections/Navigator/navigator';
 import Overview from './Sections/Overview/overview';
 import Roadmap from './Sections/Roadmap/Roadmap';
 import Map from './Sections/Map/map';
+import Footer from './Sections/Footer/Footer';
+import Concluding from './Sections/Footer/Concluding';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -49,6 +51,7 @@ function App() {
       <Insights />
       {/* <Community /> */}
       <Roadmap />
+      <Concluding></Concluding>
       <Footer />
     </>
   );

@@ -1,6 +1,13 @@
 #root {
   
- 
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: linear-gradient(
+    to bottom,
+    #050816,
+    #3D37DF
+
+  );
   
   text-align: center;
 }

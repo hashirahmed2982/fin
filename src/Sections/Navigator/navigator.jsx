@@ -106,6 +106,10 @@ const Navigator = ({ onIndexChange }) => {
         }}
       >
         <Container maxWidth="xl">
+        <Typography variant="h6"
+          sx={{  color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
+          Navigator
+        </Typography>
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
               <AnimatePresence mode="wait">

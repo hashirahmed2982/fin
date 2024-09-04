@@ -5,11 +5,13 @@ const Map = () => {
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
       {/* Number positioned above the image */}
-      
-        <Typography variant="h2" component="span" sx={{ color: 'white' }}>
-          42
-        </Typography>
-      
+
+      <Typography variant="h2" component="span" sx={{ color: 'white', display: 'block' }}>
+  27 + Clients
+</Typography>
+<Typography variant="h2" component="span" sx={{ color: 'white', display: 'block' }}>
+  $ 180k +
+</Typography>
 
       {/* Map image */}
       <Box

@@ -24,7 +24,7 @@ const Banner = () => {
           
           position: "absolute",
           top: 0,
-          left: -900,
+          left: -1200,
           width: "250vh",
           height: "100vh",
           zIndex: 1, // Behind the text content
