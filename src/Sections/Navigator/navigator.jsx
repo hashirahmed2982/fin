@@ -6,8 +6,8 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'; // Import useInView
 import image1 from '/pose3.png';
-import image2 from '/pose2_v2.png';
-import image3 from '/pose9.png';
+import image2 from '/myda.png';
+import image3 from '/cym.png';
 import graph1 from '/graph.jpg'; // Import your graph images
 import graph2 from '/graph2.jpg';
 import graph3 from '/graph3.jpg';
@@ -19,18 +19,18 @@ const statements = [
   {
     text: "You Control Your Money",
     description: "We believe your financial sovereignty should remain in your hands, not under the control of centralized institutions, Wall Street bankers, or questionable financial managers. At Finwing, our Financial Pilots provide unmatched expertise without taking possession of your money, charging fees, or applying hidden costs.",
-    image: image1
+    image: image3
   },
   {
     text: "You Manage Your Digital Assets",
     description: "With Finwing Consultancy, you maintain full control over your crypto assets, actively monitoring your capital allocations while mastering the dynamics of the crypto markets. Our approach equips you with the knowledge and tools to confidently navigate the decentralized world, empowering you to make informed decisions.",
     image: image2
   },
-  {
-    text: "Generating Risk-Averse Alpha Returns",
-    description: "",
-    image: image3
-  },
+  // {
+  //   text: "Generating Risk-Averse Alpha Returns",
+  //   description: "",
+  //   image: image3
+  // },
 ];
 const graphs = [graph1, graph2, graph3, graph4];
 
@@ -55,7 +55,7 @@ const Navigator = ({ onIndexChange }) => {
 
 
 
-    if (event.deltaY > 0 && currentIndex < 2) {
+    if (event.deltaY > 0 && currentIndex < 1) {
       const nextIndex = currentIndex + 1;
       setCurrentIndex(nextIndex);
       onIndexChange(nextIndex);
@@ -95,16 +95,18 @@ const Navigator = ({ onIndexChange }) => {
         component="section"
         sx={{
           position: 'relative',
-          maxHeight: '100vh',
-          height: '100vh',
+          
+          height: 'auto',
           overflow: 'hidden',
           color: 'white',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: 4,
+          mt:25
         }}
       >
+        
         <Container maxWidth="xl">
         <Typography variant="h6"
           sx={{  color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
@@ -159,7 +161,7 @@ const Navigator = ({ onIndexChange }) => {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.8, ease: 'easeInOut' }}
                 >
-                  =
+                  
                     <Box
                       component="img"
                       src={statements[currentIndex].image}
@@ -184,6 +186,7 @@ const Navigator = ({ onIndexChange }) => {
             </Grid>
           </Grid>
         </Container>
+        
       </Box>
     </ParallaxProvider>
   );

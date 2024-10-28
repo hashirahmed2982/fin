@@ -3,16 +3,16 @@ import { Box, Typography, Container, Grid } from "@mui/material";
 // Custom styles based on branding guidelines
 const customStyles = {
   container: {
-    height: "100vh",
-    width: "100%",
-    color: "white",
-    py: 4,
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "column",
-    // Set a background color to match your brand
+    height: 'auto',
+    width: '100%',
+    color: 'white',
+    py: 7,
+    textAlign: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    overflow: 'hidden', // Ensure rays don't overflow
   },
   insightBox: {
     backgroundColor: "#1E1E1E", // As per your brand's secondary colors
@@ -81,18 +81,17 @@ const InsightBox = ({ imageUrl, title, subtitle, description, date, timeToRead }
 const Insights = () => {
   return (
     <Box sx={customStyles.container}>
-      <Container maxWidth="xl">
-        <Typography variant="h6"
-          sx={{  color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
+      <Container maxWidth="lg" sx={{ maxWidth: '1000px' }}>
+        <Typography variant="h6" sx={{ color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
           Insights
         </Typography>
-        <Typography  variant="h1"
+        <Typography variant="h1"
           fontWeight="bold"
           mb={2}
-          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}>
+          sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '2.5rem' }, lineHeight: 1.2 }}>
           Your gateway to real-time analysis, expert reviews, and macroeconomic perspectives shaping the Web 3.0 landscape.
         </Typography>
-        <Grid container spacing={6}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <InsightBox
               imageUrl="https://insights.glassnode.com/content/images/2024/08/Group-137691791.png"
@@ -116,7 +115,7 @@ const Insights = () => {
           <Grid item xs={12} sm={4}>
             <InsightBox
               imageUrl="https://insights.glassnode.com/content/images/size/w2000/2024/08/Coinbase-Q3_png.png"
-              title="Coinbase: The Q3 Guide to Crypto Markets"
+              title="Coinbase: The Q3 Guide to Crypto "
               subtitle="Bitcoin Analysis & Research"
               description="In the Q3 'Guide to Crypto Markets' by Glassnode and Coinbase Institutional, we explore the rapid..."
               date="Jul 25, 2024"

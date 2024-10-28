@@ -1,6 +1,5 @@
-// src/components/Footer.jsx
 import React from 'react';
-import { Box, Typography, Link, IconButton, Grid, TextField, Button } from '@mui/material';
+import { Box, Typography, Link, IconButton, Grid } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -9,63 +8,58 @@ import Logo from '/logo.jpg'; // Import your logo
 
 const Footer = () => {
   return (
-    <Box sx={{  bgcolor: '#00000',
-        color: '#fff',
-        p: 4,
-        background: `radial-gradient(circle at top center,#0701ef4d 0%,  #000000 40%)`}}>
+    <Box sx={{ bgcolor: '#08080e', color: '#fff', p: 4, background: `linear-gradient(to bottom,#000,#0f0c854d)` }}>
       <Grid container spacing={4}>
+        {/* Logo and Social Links */}
         <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-          <img src={Logo} alt="Company Logo" style={{ width: '150px', marginBottom: '16px' }} />
-          <Typography variant="body1" sx={{ mb: 2 }}>
+          <img src={Logo} alt="Finwing Logo" style={{ width: '150px', marginBottom: '16px' }} />
+          <Typography variant="body1" sx={{ mb: 2, fontWeight: 'bold' }}>
             Managed by Finwing
           </Typography>
-          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><YouTubeIcon /></IconButton>
-          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><GitHubIcon /></IconButton>
-          <IconButton href="#" color="inherit" sx={{ mr: 1 }}><RedditIcon /></IconButton>
-          <IconButton href="#" color="inherit"><TelegramIcon /></IconButton>
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+            <IconButton href="#" aria-label="YouTube" color="inherit" sx={{ mr: 1 }}>
+              <YouTubeIcon />
+            </IconButton>
+            <IconButton href="#" aria-label="GitHub" color="inherit" sx={{ mr: 1 }}>
+              <GitHubIcon />
+            </IconButton>
+            <IconButton href="#" aria-label="Reddit" color="inherit" sx={{ mr: 1 }}>
+              <RedditIcon />
+            </IconButton>
+            <IconButton href="#" aria-label="Telegram" color="inherit">
+              <TelegramIcon />
+            </IconButton>
+          </Box>
         </Grid>
+
+        {/* Finwing Links */}
         <Grid item xs={12} md={4}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Finwing</Typography>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Grants</Link>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Break</Link>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Media Kit</Link>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Careers</Link>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Disclaimer</Link>
-          <Link href="#" color="inherit" underline="hover" sx={{ display: 'block', mb: 1 }}>Privacy Policy</Link>
+          <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'center' }}>Finwing</Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            {['Grants', 'Break', 'Media Kit', 'Careers', 'Disclaimer', 'Privacy Policy'].map((link, index) => (
+              <Link key={index} href="#" color="inherit" underline="hover" sx={{ mb: 1, textAlign: 'center' }}>
+                {link}
+              </Link>
+            ))}
+          </Box>
         </Grid>
+
+        {/* Additional Information (optional) */}
         <Grid item xs={12} md={4}>
-          <Typography variant="h6" sx={{ mb: 2 }}>Contact Us</Typography>
-          <form>
-            <TextField
-              fullWidth
-              label="Your Email"
-              variant="filled"
-              size="small"
-              margin="dense"
-              sx={{  borderRadius: '4px' }}
-            />
-            <TextField
-              fullWidth
-              label="Message"
-              variant="filled"
-              size="small"
-              margin="dense"
-              multiline
-              rows={4}
-              sx={{ bgcolor: '#FFF', borderRadius: '4px' }}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{ mt: 2, bgcolor: '#1e88e5', ':hover': { bgcolor: '#1565c0' } }}
-              fullWidth
-            >
-              Send
-            </Button>
-          </form>
+          <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'center' }}>Contact Us</Typography>
+          <Typography variant="body2" sx={{ mb: 1, textAlign: 'center' }}>
+            support@finwing.com
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1, textAlign: 'center' }}>
+            +1 (123) 456-7890
+          </Typography>
+          <Typography variant="body2" sx={{ textAlign: 'center' }}>
+            198 West 21th Street, Suite 721 New York NY 10016
+          </Typography>
         </Grid>
       </Grid>
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
+
+      <Box sx={{ textAlign: 'center', mt: 4, borderTop: '1px solid rgba(255, 255, 255, 0.2)', pt: 2 }}>
         <Typography variant="caption">
           © 2024 Finwing. All rights reserved.
         </Typography>

@@ -12,6 +12,11 @@ import Roadmap from './Sections/Roadmap/Roadmap';
 import Map from './Sections/Map/map';
 import Footer from './Sections/Footer/Footer';
 import Concluding from './Sections/Footer/Concluding';
+import Risk from './Sections/Navigator/risk';
+import FinwingAccelerator from './Sections/accelarator/accelarator';
+import FinwingFoundry from './Sections/foundry/foundry';
+import FinwingArchitect from './Architect/architect';
+import ContactForm from './Sections/Footer/ContactForm';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -25,8 +30,8 @@ function App() {
   };
 
   const handleIndexChange = (index) => {
-    if (index < 2 && index > 0) {
-      setIsScrollLocked(true);
+    if (index < 1 && index > 0) {
+      setIsScrollLocked(false);
       lockScroll();
     } else {
       setIsScrollLocked(false);
@@ -47,11 +52,16 @@ function App() {
       <Overview />
       <Ecosystem />
       <Navigator onIndexChange={handleIndexChange} />
+      <Risk></Risk>
+      <FinwingAccelerator></FinwingAccelerator>
+      <FinwingFoundry></FinwingFoundry>
+      <FinwingArchitect></FinwingArchitect>
       <Map></Map>
       <Insights />
       {/* <Community /> */}
       <Roadmap />
       <Concluding></Concluding>
+      <ContactForm></ContactForm>
       <Footer />
     </>
   );

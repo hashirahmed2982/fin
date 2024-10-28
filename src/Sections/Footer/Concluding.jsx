@@ -1,14 +1,14 @@
 import React from 'react';
 import { Box, Grid, Typography, TextField, Button } from '@mui/material';
-import AstronautImage from '/pose8.png'; // Ensure this path is correct
+import AstronautImage from '/conn.png'; // Ensure this path is correct
 
 const Concluding = () => {
   return (
     <Box
       sx={{
         position: 'relative',
-        height: '50vh',
-        background: `radial-gradient(circle, #0701ef4d 0%, #000000 50%)`, // Spotlight effect
+        height: '60vh',
+        background: `radial-gradient(circle, #0701ef4d 0%, #08080e 45%)`, // Spotlight effect
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -47,7 +47,7 @@ const Concluding = () => {
             component="img"
             src={AstronautImage}
             alt="Astronaut"
-            sx={{ width: '100%', maxWidth: '400px' }}
+            sx={{ width: '150%', maxWidth: '600px' }}
           />
         </Grid>
 
@@ -95,10 +95,10 @@ const Concluding = () => {
               variant="outlined"
               placeholder="Enter your email"
               sx={{
-                bgcolor: '#fff',
-                
+                bgcolor: '#585a5f69',
+                color: "#fff",
                 width: '70%', // Wider width for modern look
-                height: '45px', // Reduce height for sleekness
+                 height: 'auto'// Reduce height for sleekness
               }}
             />
             <Button
@@ -109,7 +109,7 @@ const Concluding = () => {
                 color: '#fff',
                 textTransform: 'uppercase',
                 fontWeight: 'bold',
-                height: '45px', // Match the height of TextField
+                 // Match the height of TextField
                 px: 4, // Padding for button width
                 '&:hover': {
                   bgcolor: '#1c54b2',

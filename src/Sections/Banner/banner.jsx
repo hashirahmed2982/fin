@@ -8,6 +8,7 @@ const Banner = () => {
         height: "100vh",
         width: "100%",
         position: "relative",
+        background: `linear-gradient(to bottom, #0701ef4d , #08080e 50%)`,
         color: "white",
         py: 4,
         textAlign: "center",
@@ -40,6 +41,7 @@ const Banner = () => {
         sx={{
           position: "relative",
           zIndex: 2, // Above the stars
+          
         }}
       >
         <Typography

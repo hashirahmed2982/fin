@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: '#00000042' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: '#00000042' }} >
       <Container  maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
           {/* Logo and Title aligned to the start */}
