@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Box, Typography, Container, Grid } from "@mui/material";
 
 // Custom styles based on branding guidelines
@@ -78,9 +79,9 @@ const InsightBox = ({ imageUrl, title, subtitle, description, date, timeToRead }
   );
 };
 
-const Insights = () => {
+const Insights = ({id}) => {
   return (
-    <Box sx={customStyles.container}>
+    <Box id={id} sx={customStyles.container}>
       <Container maxWidth="lg" sx={{ maxWidth: '1000px' }}>
         <Typography variant="h6" sx={{ color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
           Insights

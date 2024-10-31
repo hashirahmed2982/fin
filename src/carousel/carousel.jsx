@@ -33,7 +33,7 @@ const Carousel = ({ images }) => {
   const slidersVariants = {
     hover: {
       scale: 1.2,
-      backgroundColor: "#ff00008e",
+      backgroundColor: "#007aff",
     },
   };
   const dotsVariants = {
@@ -84,7 +84,7 @@ const Carousel = ({ images }) => {
             variants={slideVariants}
           />
         </AnimatePresence>
-        <div className="slide_direction">
+        {/* <div className="slide_direction">
           <motion.div
             variants={slidersVariants}
             whileHover="hover"
@@ -115,7 +115,7 @@ const Carousel = ({ images }) => {
               <path d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z" />
             </svg>
           </motion.div>
-        </div>
+        </div> */}
       </div>
       <div className="carousel-indicator">
         {images.map((_, index) => (

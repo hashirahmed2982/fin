@@ -1,9 +1,10 @@
 import { Box, Typography, Container } from "@mui/material";
 import Stars from "./particles";
 
-const Banner = () => {
+const Banner = ({id}) => {
   return (
     <Box
+    id={id}
       sx={{
         height: "100vh",
         width: "100%",

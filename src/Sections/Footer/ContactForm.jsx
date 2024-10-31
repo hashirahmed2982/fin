@@ -5,9 +5,9 @@ import PhoneIcon from '@mui/icons-material/Phone'; // For the phone
 import EmailIcon from '@mui/icons-material/Email'; // For the email
 import PublicIcon from '@mui/icons-material/Public'; // For the website
 
-const ContactForm = () => {
+const ContactForm = ({id}) => {
   return (
-    <Box sx={{ p: 4, maxWidth: 'lg', margin: 'auto', borderRadius: '8px' }}>
+    <Box id={id} sx={{ p: 4, maxWidth: 'lg', margin: 'auto', borderRadius: '8px' }}>
       <Grid container spacing={8}>
         {/* Contact Form */}
         <Grid item xs={12} md={6}>
@@ -174,9 +174,9 @@ const ContactForm = () => {
         <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Box sx={{ width: '100%', textAlign: 'center' }}>
             <img
-              src="/contact1.webp"
+              src="/contact.png"
               alt="Map Placeholder"
-              style={{ width: '100%', height: '450px', borderRadius: '8px' }}
+              style={{ width: '100%', height: '100%', borderRadius: '8px' }}
             />
           </Box>
         </Grid>

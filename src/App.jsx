@@ -45,26 +45,28 @@ function App() {
     };
   }, []);
 
+
+
   return (
     <>
       <Navbar />
-      <Banner />
-      <Overview />
-      <Ecosystem />
-      <Navigator onIndexChange={handleIndexChange} />
-      <Risk></Risk>
-      <FinwingAccelerator></FinwingAccelerator>
-      <FinwingFoundry></FinwingFoundry>
-      <FinwingArchitect></FinwingArchitect>
-      <Map></Map>
-      <Insights />
-      {/* <Community /> */}
-      <Roadmap />
-      <Concluding></Concluding>
-      <ContactForm></ContactForm>
-      <Footer />
+      <Banner id="banner" />
+      <Overview id="overview" />
+      <Ecosystem id="ecosystem" />
+      <Navigator id="navigator" onIndexChange={handleIndexChange}/>
+      <Risk id="risk" />
+      <FinwingAccelerator id="accelerator" />
+      <FinwingFoundry id="foundry" />
+      <FinwingArchitect id="architect" />
+      <Map id="map" />
+      <Insights id="insights" />
+      <Roadmap id="roadmap" />
+      <Concluding id="concluding" />
+      <ContactForm id="contact" />
+      <Footer id="footer" />
     </>
   );
 }
+
 
 export default App;

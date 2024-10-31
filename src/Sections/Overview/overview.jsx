@@ -1,8 +1,9 @@
 import { Box, Typography, Container, Grid } from "@mui/material";
 
-const Overview = () => {
+const Overview = ({id}) => {
   return (
     <Box
+    id={id}
       sx={{
         height: "100vh",
         width: "100%",

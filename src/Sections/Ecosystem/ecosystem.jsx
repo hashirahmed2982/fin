@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Container } from '@mui/material';
 import { useState } from 'react';
 import Services from './services';
 
-const Ecosystem = () => {
+const Ecosystem = ({ id }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const handleMouseEnter = (item) => {
@@ -98,6 +99,7 @@ const Ecosystem = () => {
 
   return (
     <Container
+    id={id}
       sx={{
         maxWidth: 'xl',
         height: 'auto',

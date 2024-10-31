@@ -6,7 +6,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'; // Import useInView
 import image1 from '/pose3.png';
-import image2 from '/myda.png';
+import image2 from '/myda1.png';
 import image3 from '/cym.png';
 import graph1 from '/graph.jpg'; // Import your graph images
 import graph2 from '/graph2.jpg';
@@ -34,7 +34,7 @@ const statements = [
 ];
 const graphs = [graph1, graph2, graph3, graph4];
 
-const Navigator = ({ onIndexChange }) => {
+const Navigator = ({ onIndexChange ,id}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScroll, setCanScroll] = useState(true);
   const timerRef = useRef(null);
@@ -89,13 +89,14 @@ const Navigator = ({ onIndexChange }) => {
   }, [currentIndex, canScroll, inView]); // Add inView as a dependency
 
   return (
-    <ParallaxProvider>
+    
       <Box
+      id={id}
         ref={ref}
         component="section"
         sx={{
           position: 'relative',
-          
+          minHeight: '400px',
           height: 'auto',
           overflow: 'hidden',
           color: 'white',
@@ -188,7 +189,7 @@ const Navigator = ({ onIndexChange }) => {
         </Container>
         
       </Box>
-    </ParallaxProvider>
+    
   );
 };
 

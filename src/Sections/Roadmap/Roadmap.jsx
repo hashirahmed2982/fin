@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import './Roadmap.css'; // Import the CSS file here
 
-const Roadmap = () => {
+const Roadmap = ({id}) => {
   const timelineData = [
     {
       year: 'Q1 Jan-March',
@@ -15,7 +15,7 @@ const Roadmap = () => {
         'Creating and launching the official Finwing Community on Telegram and Twitter, fostering engagement and discussion within our community.',
         'Launching the initial version (1.0) of the FINWING Website, serving as our one-stop hub for information and interaction.',
       ],
-      image: '/test.webp',
+      image: '/roadmap-foundation.png',
     },
     {
       year: 'Q2 April-June',
@@ -31,7 +31,7 @@ const Roadmap = () => {
         'Finwing Events in 7 Countries: Strengthening global connections and fostering communal collaboration across borders.',
         'Testnet Launch of Finwing Vaults: Pioneering decentralized investment opportunities for real-world testing and refinement.',
       ],
-      image: '/test.webp',
+      image: '/roadmap-development.png',
     },
     {
       year: 'Q3 July-Sept',
@@ -39,7 +39,7 @@ const Roadmap = () => {
       points: [
         'Additional details to be added for this phase.',
       ],
-      image: '/test.webp',
+      image: '/roadmap-refinement.png',
     },
     {
       year: 'Q4 Oct-Dec',
@@ -47,13 +47,14 @@ const Roadmap = () => {
       points: [
         'Additional details to be added for this phase.',
       ],
-      image: '/test.webp',
+      image: '/roadmap-mainnet.png',
     },
   ];
 
   return (
     <>
       <Container
+      id={id}
         sx={{
           maxWidth: 'xl',
           height: 'auto',

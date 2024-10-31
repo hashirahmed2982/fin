@@ -7,7 +7,7 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import LayersIcon from '@mui/icons-material/Layers';
 import BackgroundImage from '/accelarator.png';
 
-const FinwingAccelerator = () => {
+const FinwingAccelerator = ({id}) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-50px' });
 
@@ -29,7 +29,7 @@ const FinwingAccelerator = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: '#08080e', py: 10 }}>
+    <Box id={id} sx={{ backgroundColor: '#08080e', py: 10 }}>
       <Box
         sx={{
           background: `linear-gradient(to bottom, rgba(8, 8, 14, 1) 0%, rgba(8, 8, 14, 0.7) 40%, rgba(8, 8, 14, 0.7) 60%, rgba(8, 8, 14, 1) 100%), url(${BackgroundImage})`,

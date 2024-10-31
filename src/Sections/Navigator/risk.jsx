@@ -17,10 +17,11 @@ const statements = [
 ];
 const graphs = [graph1, graph2, graph3, graph4];
 
-const Risk = () => {
+const Risk = ({id}) => {
   return (
     <ParallaxProvider>
       <Box
+      id={id}
         component="section"
         sx={{
           position: 'relative',

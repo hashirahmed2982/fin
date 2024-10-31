@@ -8,13 +8,13 @@ import BalanceIcon from '@mui/icons-material/Balance';
 import SecurityIcon from '@mui/icons-material/Security';
 import BackgroundImage from '/foundry.png'; // Replace with your background image
 import { motion } from 'framer-motion';
-const FinwingFoundry = () => {
+const FinwingFoundry = ({ id }) => {
   const fadeIn = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
   };
   return (
-    <Box sx={{ backgroundColor: '#08080e', py: 8 }}>
+    <Box id={id} sx={{ backgroundColor: '#08080e', py: 8 }}>
       {/* Header Section with Background Image */}
       <Box
         sx={{
@@ -48,20 +48,20 @@ const FinwingFoundry = () => {
 
       {/* Intro Section */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }}>
-        
-          <Box sx={{ mb: 6 }}>
+
+        <Box sx={{ mb: 6 }}>
           <motion.div initial="initial" animate="animate" variants={fadeIn}>
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               Your DAO, Your Token, Our Expertise
             </Typography>
-            </motion.div>
-            <motion.div initial="initial" animate="animate" variants={fadeIn}>
+          </motion.div>
+          <motion.div initial="initial" animate="animate" variants={fadeIn}>
             <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
               Finwing Foundry is your gateway to building resilient DAOs and sustainable tokenomics. We combine strategic planning, expert governance, and financial transparency to ensure your decentralized project thrives.
             </Typography>
-            </motion.div>
-          </Box>
-        
+          </motion.div>
+        </Box>
+
       </Container>
 
       {/* Seven Layers of DAO - Simple Graphics */}
@@ -87,9 +87,23 @@ const FinwingFoundry = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box sx={{ textAlign: 'center' }}>
+          <Box
+              component="img"
+              src="/tfw.png"
+
+              sx={{
+                maxHeight: '400px',
+                maxWidth: '500px',
+                width: '100%',
+                height: '100%',
+                borderRadius: 3,
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                objectFit: 'contain',
+              }}
+            />
+            {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/tfw.png" alt="Tokenomics Flywheel" style={{ maxWidth: '100%', height: 'auto' }} />
-            </Box>
+            </Box> */}
           </Grid>
         </Grid>
       </Container>
@@ -98,9 +112,23 @@ const FinwingFoundry = () => {
       <Container maxWidth="lg" sx={{ my: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-            <Box sx={{ textAlign: 'center' }}>
+          <Box
+              component="img"
+              src="/ta.png"
+
+              sx={{
+                maxHeight: '400px',
+                maxWidth: '500px',
+                width: '100%',
+                height: '100%',
+                borderRadius: 3,
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                objectFit: 'contain',
+              }}
+            />
+            {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/ta.png" alt="Airdrop Campaign" style={{ maxWidth: '100%', height: 'auto' }} />
-            </Box>
+            </Box> */}
           </Grid>
           <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
@@ -267,9 +295,23 @@ const FinwingFoundry = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} sx={{ mt: 5 }}>
-            <Box sx={{ textAlign: 'center' }}>
-              <img src="/dtm.png" alt="DAO Treasury Management" style={{ maxWidth: '100%', height: 'auto' }} />
-            </Box>
+            <Box
+              component="img"
+              src="/dtm1.png"
+
+              sx={{
+                maxHeight: '400px',
+                maxWidth: '500px',
+                width: '100%',
+                height: '100%',
+                borderRadius: 3,
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                objectFit: 'contain',
+              }}
+            />
+            {/* <Box sx={{ textAlign: 'center' }}>
+              <img src="/dtm1.png" alt="DAO Treasury Management" style={{ maxWidth: '100%', height: 'auto' }} />
+            </Box> */}
           </Grid>
         </Grid>
       </Container>

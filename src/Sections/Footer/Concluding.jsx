@@ -2,9 +2,10 @@ import React from 'react';
 import { Box, Grid, Typography, TextField, Button } from '@mui/material';
 import AstronautImage from '/conn.png'; // Ensure this path is correct
 
-const Concluding = () => {
+const Concluding = ({id}) => {
   return (
     <Box
+    id={id}
       sx={{
         position: 'relative',
         height: '60vh',

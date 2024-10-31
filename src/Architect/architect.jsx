@@ -8,7 +8,7 @@ import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import BackgroundImage from '/architect.png'; // Replace with your background image
 import { motion, useInView } from 'framer-motion';
 
-const FinwingArchitect = () => {
+const FinwingArchitect = ({id}) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-50px' });
 
@@ -30,7 +30,7 @@ const FinwingArchitect = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: '#08080e', py: 8 }}>
+    <Box id={id} sx={{ backgroundColor: '#08080e', py: 8 }}>
       {/* Header Section with Background Image */}
       <Box
         sx={{

@@ -2,7 +2,7 @@ import { Box, Typography, Container, Card } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import mapImage from '/world_map.png'; // Replace with your actual image path
 
-const Map = () => {
+const Map = ({id}) => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [borderGlow, setBorderGlow] = useState({ top: 0, bottom: 0, left: 0, right: 0 });
   const [clients, setClients] = useState(0);
@@ -81,7 +81,7 @@ const Map = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container id={id} maxWidth="lg" sx={{ py: 4 }}>
       {/* Card container */}
       <Card
         ref={cardRef}
