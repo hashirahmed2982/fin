@@ -1,18 +1,24 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import logo from "/logo3.png"; // Replace with your logo path
+import logo from "/logo3.png";
+import NavigatorIcon from "/navigator1.png";
+import ArchitectIcon from "/architect1.png";
+import AcceleratorIcon from "/accelarator1.png";
+import FoundryIcon from "/foundry1.png";
+import InsightsIcon from "/insights1.png";
+import { Menu } from "@mui/material";
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [ecosystemHover, setEcosystemHover] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const handleMenuOpen = (event) => {
@@ -36,15 +42,18 @@ const Navbar = () => {
       position="fixed"
       elevation={4}
       sx={{
-        backgroundColor: "#00000042", // Dark semi-transparent background
-        backdropFilter: "blur(8px)", // Slight blur for elegance
-        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+        backgroundColor: "#00000042",
+        backdropFilter: "blur(8px)",
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)",
       }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           {/* Logo and Title */}
-          <Box sx={{ display: "flex", alignItems: "center", color: "inherit" }} onClick={() => handleScroll('banner')}>
+          <Box
+            sx={{ display: "flex", alignItems: "center", color: "inherit" }}
+            onClick={() => handleScroll("banner")}
+          >
             <img
               src={logo}
               alt="logo"
@@ -53,7 +62,6 @@ const Navbar = () => {
                 height: 40,
                 borderRadius: "8px",
                 marginRight: "10px",
-                
               }}
             />
             <Typography
@@ -61,7 +69,7 @@ const Navbar = () => {
               sx={{
                 fontWeight: 700,
                 letterSpacing: 1,
-                color: "#ffffff", // White for contrast on black background
+                color: "#ffffff",
               }}
             >
               Finwing
@@ -88,71 +96,121 @@ const Navbar = () => {
                       boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.3)",
                     },
                   }}
-                  TransitionProps={{
-                    style: {
-                      transitionDelay: "100ms",
-                    },
-                  }}
                 >
-                  {["navigator", "insights", "roadmap", "contact"].map(
-                    (section, index) => (
-                      <MenuItem
-                        key={section}
-                        onClick={() => handleScroll(section)}
-                        sx={{
-                          color: "#ffffff",
-                          "&:hover": {
-                            backgroundColor: "#007aff",
-                            transform: "translateX(5px)", // Slide-in effect on hover
-                            transition: "background-color 0.3s ease, transform 0.3s ease",
-                          },
-                          transitionDelay: `${index * 50}ms`, // Staggered delay effect
-                        }}
-                      >
-                        {section.charAt(0).toUpperCase() + section.slice(1)}
-                      </MenuItem>
-                    )
-                  )}
+                  <MenuItem onClick={() => handleScroll("ecosystem")}>
+                    Ecosystem
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScroll("roadmap")}>
+                    Roadmap
+                  </MenuItem>
+                  <MenuItem onClick={() => handleScroll("contact")}>
+                    Contact
+                  </MenuItem>
                 </Menu>
               </>
             ) : (
               <>
-                {["Navigator", "Insights", "Roadmap", "Contact"].map(
-                  (section) => (
-                    <MenuItem
-                      key={section}
-                      onClick={() => handleScroll(section.toLowerCase())}
-                      sx={{
-                        color: "#ffffff",
-                        fontWeight: 500,
-                        mx: 2,
-                        position: "relative",
-                        "&:hover": {
-                          color: "#007aff",
-                          "&::after": {
-                            transform: "scaleX(1)", // Show underline on hover
-                            opacity: 1,
-                          },
-                        },
-                        "&::after": {
-                          content: '""',
-                          position: "absolute",
-                          width: "100%",
-                          height: "2px",
-                          bottom: "-4px",
-                          left: 0,
-                          backgroundColor: "#007aff",
-                          transform: "scaleX(0)", // Initial state
-                          transition: "transform 0.3s ease, opacity 0.3s ease",
-                          opacity: 0,
-                        },
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                      {section}
-                    </MenuItem>
-                  )
-                )}
+                <MenuItem
+                  onMouseEnter={() => setEcosystemHover(true)}
+                  onMouseLeave={() => setEcosystemHover(false)}
+                  sx={{
+                    color: "#ffffff",
+                    fontWeight: 500,
+                    mx: 2,
+                    position: "relative",
+                    "&:hover": {
+                      color: "#00aaff", // Change text color on hover
+                    },
+                  }}
+                >
+                  Ecosystem
+                  {ecosystemHover && (
+                    <Box
+                    onMouseEnter={() => setEcosystemHover(true)}
+                    onMouseLeave={() => setEcosystemHover(false)}
+                    sx={{
+                      position: "absolute",
+                      top: "110%", // Lower submenu slightly for better spacing
+                      left: 0,
+                      backgroundColor: "#0d0d0d", // Fully blackish background
+                      color: "#ffffff",
+                      backdropFilter: "blur(15px)", // Gentle blur effect for a modern look
+                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.5)", // Deeper shadow for a grand look
+                      borderRadius: "12px", // Rounded corners
+                      padding: "16px 0", // Consistent padding
+                      zIndex: 10,
+                      width: 260, // Slightly wider for balance
+                      transition: "all 0.3s ease", // Smooth transition for hover effects
+                    }}
+                  >
+                      {/* Submenu Items */}
+                      {[
+                        { id: "navigator", label: "Navigator", icon: NavigatorIcon },
+                        { id: "architect", label: "Architect", icon: ArchitectIcon },
+                        { id: "accelerator", label: "Accelerator", icon: AcceleratorIcon },
+                        { id: "foundry", label: "Foundry", icon: FoundryIcon },
+                        { id: "insights", label: "Insights", icon: InsightsIcon },
+                      ].map((item) => (
+                        <MenuItem
+                          key={item.id}
+                          onClick={() => handleScroll(item.id)}
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            padding: "12px 20px",
+                            transition: "all 0.3s ease",
+                            "&:hover": {
+                              backgroundColor: "#1a1a1a", // Slightly lighter black
+                              color: "#00aaff", // Bluish spotlight effect
+                              textShadow: "0px 0px 8px #00aaff", // Glow effect for text
+                              transform: "translateX(5px)", // Smooth motion
+                            },
+                          }}
+                        >
+                          <Box sx={{ display: "flex", alignItems: "center" }}>
+                            <img
+                              src={item.icon}
+                              alt={item.label}
+                              style={{ width: 24, height: 24, marginRight: 10 }}
+                            />
+                            {item.label}
+                          </Box>
+                        </MenuItem>
+                      ))}
+                    </Box>
+                  )}
+                </MenuItem>
+
+                <MenuItem
+                  onClick={() => handleScroll("roadmap")}
+                  sx={{
+                    color: "#ffffff",
+                    fontWeight: 500,
+                    mx: 2,
+                    position: "relative",
+                    "&:hover": {
+                      color: "#007aff",
+                    },
+                  }}
+                >
+                  Roadmap
+                </MenuItem>
+
+                <MenuItem
+                  onClick={() => handleScroll("contact")}
+                  sx={{
+                    color: "#ffffff",
+                    fontWeight: 500,
+                    mx: 2,
+                    position: "relative",
+                    "&:hover": {
+                      color: "#007aff",
+                    },
+                  }}
+                >
+                  Contact
+                </MenuItem>
               </>
             )}
           </Box>

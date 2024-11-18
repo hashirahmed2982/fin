@@ -5,9 +5,9 @@ import BusinessIcon from '@mui/icons-material/Business';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import DescriptionIcon from '@mui/icons-material/Description';
 import LayersIcon from '@mui/icons-material/Layers';
-import BackgroundImage from '/accelarator.png';
+import BackgroundImage from '/accelarator1.png';
 
-const FinwingAccelerator = ({id}) => {
+const FinwingAccelerator = ({ id }) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-50px' });
 
@@ -50,6 +50,32 @@ const FinwingAccelerator = ({id}) => {
           </Typography>
         </Container>
       </Box>
+      {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+        <img
+          src="/section.png" // Replace with your image path or URL
+          alt="Icon"
+          style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+        />
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#FFFFFF', // White text color
+            fontWeight: 'bold',
+            letterSpacing: '2px' // Adjust letter spacing
+          }} // Remove mb and pb for better alignment
+        >
+          ACCELERATOR
+        </Typography>
+      </Box>
+      <Box textAlign="center" mb={0} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="body1"
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.1rem' } }}
+        >
+          Launch, Scale & Sustain your Web3.0 Project
+        </Typography>
+
+      </Box> */}
 
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 10 }}>
         <Box sx={{ mb: 8 }}>
@@ -57,9 +83,21 @@ const FinwingAccelerator = ({id}) => {
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Over 80% of Web3.0 startups fail due to lack of proper market positioning, flawed business models, and weak investor narratives. It doesn’t have to be that way.
           </Typography>
-          <Typography variant="h6" sx={{ color: '#ffffff', mb: 4, letterSpacing: '1px' }}>
-            "Your Web3.0 Startup Accelerator"
-          </Typography>
+          <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+            <Typography
+              variant="h1"
+              fontWeight="bold"
+              mb={2}
+              sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+            >
+              <span style={{ color: 'white' }}>Your Web3.0 </span>{' '}
+              <span style={{ color: '#1976d2' }}>Startup Accelerator</span>
+            </Typography>
+
+          </Box>
+          {/* <Typography variant="h6" sx={{ color: '#ffffff', mb: 4, letterSpacing: '1px' }}>
+            ""
+          </Typography> */}
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
             We offer tailored strategies, investor-ready pitch decks, competitive market insights, and expert white paper development to ensure your startup's success.
           </Typography>
@@ -123,7 +161,7 @@ const FinwingAccelerator = ({id}) => {
                     color: '#ffffff',
                     borderRadius: '8px',
                     minHeight: '440px', // Set a fixed height for uniformity
-                    
+
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     textAlign: 'center',

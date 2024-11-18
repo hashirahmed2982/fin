@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import './Roadmap.css'; // Import the CSS file here
 
-const Roadmap = ({id}) => {
+const Roadmap = ({ id }) => {
   const timelineData = [
     {
       year: 'Q1 Jan-March',
@@ -54,7 +54,7 @@ const Roadmap = ({id}) => {
   return (
     <>
       <Container
-      id={id}
+        id={id}
         sx={{
           maxWidth: 'xl',
           height: 'auto',
@@ -62,9 +62,23 @@ const Roadmap = ({id}) => {
           textAlign: 'center',
         }}
       >
-        <Typography variant="h6" sx={{ color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
-          Roadmap
-        </Typography>
+        <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+          <img
+            src="/section.png" // Replace with your image path or URL
+            alt="Icon"
+            style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#FFFFFF', // White text color
+              fontWeight: 'bold',
+              letterSpacing: '2px' // Adjust letter spacing
+            }} // Remove mb and pb for better alignment
+          >
+            ROADMAP
+          </Typography>
+        </Box>
       </Container>
       <section id="timeline">
         {timelineData.map((item, index) => (

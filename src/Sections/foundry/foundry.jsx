@@ -6,7 +6,7 @@ import HowToVoteIcon from '@mui/icons-material/HowToVote';
 import PieChartIcon from '@mui/icons-material/PieChart';
 import BalanceIcon from '@mui/icons-material/Balance';
 import SecurityIcon from '@mui/icons-material/Security';
-import BackgroundImage from '/foundry.png'; // Replace with your background image
+import BackgroundImage from '/foundry1.png'; // Replace with your background image
 import { motion } from 'framer-motion';
 const FinwingFoundry = ({ id }) => {
   const fadeIn = {
@@ -38,18 +38,55 @@ const FinwingFoundry = ({ id }) => {
               letterSpacing: '2px',
             }}
           >
-            Finwing Foundry
+            <span style={{ color: '#1a73e8' }}>Finwing</span> Foundry
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
-            Empowering DAO Formation & Token Creation with Strategic Campaigns, Transparent Governance, and Expert Treasury Management
+          
           </Typography>
         </Container>
       </Box>
+      {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+        <img
+          src="/section.png" // Replace with your image path or URL
+          alt="Icon"
+          style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+        />
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#FFFFFF', // White text color
+            fontWeight: 'bold',
+            letterSpacing: '2px' // Adjust letter spacing
+          }} // Remove mb and pb for better alignment
+        >
+          FOUNDRY
+        </Typography>
+      </Box>
+      <Box textAlign="center" mb={0} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="body1"
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.1rem' } }}
+        >
+          Empowering DAO Formation & Token Creation with Strategic Campaigns, Transparent Governance, and Expert Treasury Management
+        </Typography>
+
+      </Box> */}
 
       {/* Intro Section */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }}>
-
-        <Box sx={{ mb: 6 }}>
+      {/* <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="h1"
+          fontWeight="bold"
+          mb={2}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+        >
+          <span style={{ color: 'white' }}>Your DAO, Your</span>{' '}
+          <span style={{ color: '#1976d2' }}> Token, Our Expertise</span>
+        </Typography>
+        
+      </Box> */}
+        {/* <Box sx={{ mb: 6 }}>
           <motion.div initial="initial" animate="animate" variants={fadeIn}>
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               Your DAO, Your Token, Our Expertise
@@ -60,21 +97,57 @@ const FinwingFoundry = ({ id }) => {
               Finwing Foundry is your gateway to building resilient DAOs and sustainable tokenomics. We combine strategic planning, expert governance, and financial transparency to ensure your decentralized project thrives.
             </Typography>
           </motion.div>
-        </Box>
+        </Box> */}
 
       </Container>
 
       {/* Seven Layers of DAO - Simple Graphics */}
-      <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }}>
+      {/* <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }}>
         <Typography variant="h5" sx={{ color: '#ffffff', mb: 4 }}>
           The Seven Layers of DAO
         </Typography>
         <motion.img initial="initial" animate="animate" variants={fadeIn} src="/DAO.jpg" alt="Seven Layers of DAO" style={{ maxWidth: '50%', height: '50%' }} />
-      </Container>
+      </Container> */}
+{/* Token Airdrops & Campaigns Section */}
+<Container maxWidth="lg" sx={{ my: 8 }}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+          <Box
+              component="img"
+              src="/DAO-F.png"
 
+              sx={{
+                maxHeight: '700px',
+                maxWidth: '800px',
+                width: '100%',
+                height: '120%',
+                
+                borderRadius: 3,
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                objectFit: 'contain',
+              }}
+            />
+            {/* <Box sx={{ textAlign: 'center' }}>
+              <img src="/ta.png" alt="Airdrop Campaign" style={{ maxWidth: '100%', height: 'auto' }} />
+            </Box> */}
+          </Grid>
+          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+            <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
+            Your DAO, Your Token, Our Expertise
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#c7c7c7', mb: 2 }}>
+            Empowering DAO Formation & Token Creation with Strategic Campaigns, Transparent Governance, and Expert Treasury Management.
+            </Typography>
+            <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+            Finwing Foundry is your gateway to building resilient DAOs and sustainable tokenomics. We combine strategic planning, expert governance, and financial transparency to ensure your decentralized project thrives.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
       {/* Tokenomics Section */}
       <Container maxWidth="lg" sx={{ my: 8 }}>
         <Grid container spacing={4} alignItems="center">
+          
           <Grid item xs={12} md={6}>
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               Tokenomics: The Backbone of a Sustainable Crypto Project

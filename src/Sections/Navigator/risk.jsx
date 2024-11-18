@@ -51,12 +51,17 @@ const Risk = ({id}) => {
               <Typography
                 variant="h3"
                 sx={{
-                  color: 'white',
+                  
                   fontWeight: 'bold',
                   mb: 3,
                 }}
               >
-                {statements[0].text}
+                <span style={{ color: '#white' }}>
+                    {statements[0].text.slice(0, statements[0].text.length / 2)}
+                  </span>
+                  <span style={{ color: '#1976d2' }}>
+                    {statements[0].text.slice(statements[0].text.length / 2)}
+                  </span>
               </Typography>
               <Typography
                 variant="body1"

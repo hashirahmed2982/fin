@@ -1,0 +1,16 @@
+.floating-popup {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  
+  .floating-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .floating-popup.hide {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  

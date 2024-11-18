@@ -56,12 +56,13 @@ const Banner = ({id}) => {
             textShadow: "0px 0px 10px rgba(255, 255, 255, 0.5)",
           }}
         >
-          Your Wing to Web 3.0 Future
+          
+          YOUR WING TO WEB 3.0 FUTURE
         </Typography>
         <Typography
           variant="h5"
           sx={{
-            fontSize: '20px',
+            fontSize: '30px',
             fontWeight: 300,
             fontFamily: "PolySans, sans-serif",
             color: "#B0B7D6",

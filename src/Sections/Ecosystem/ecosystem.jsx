@@ -18,9 +18,58 @@ const Ecosystem = ({ id }) => {
 
   const surroundingItems = [
     {
+      title: 'ARCHITECT',
+      color: 'white',
+      icon: '/architect1.png',
+      tagline: 'Revolutionizing Businesses through Seamless Blockchain Integration',
+      description: 'For Greater Efficiency, Security, and Growth.',
+      services: [
+        'Blockchain Solution for Supply Chain Management',
+        'Integrating Financial Accounting On Chain',
+        'Tracking Employee Management through Blockchain',
+      ],
+    },
+    
+    
+    {
+      title: 'INSIGHTS',
+      color: 'white',
+      icon: '/insights1.png',
+      tagline: 'Unlocking Strategic Insights',
+      description: 'Analytics, trends, and knowledge to keep you ahead in the rapidly evolving digital landscape.',
+      services: [
+        'Market Analytics',
+        'Industry Trends',
+        'Strategic Knowledge Base',
+      ],
+    },
+    {
+      title: 'VAULTS',
+      color: 'white',
+      icon: '/vaults2.png',
+      tagline: 'Navigating the Future of Web3.0 Finance with Finwing Investment Vaults',
+      description: 'Testnet Phase ⅔ Ongoing.',
+      services: [],
+      grandVisual: true, // Indicating this item should have grand visuals
+    },
+    {
+      title: 'FOUNDRY',
+      color: 'white',
+      icon: '/foundry1.png',
+      tagline: 'Empowering DAO Formation & Token Creation',
+      description: 'Founded by tokensmiths and DAO curators of Finwing to empower DAO formation and token creation with strategic campaigns, transparent governance, and expert treasury management.',
+      services: [
+        'Token Creation & Management',
+        'Token Airdrops & Campaigns',
+        'DAO Formation & Governance',
+        'DAO Treasury Management',
+      ],
+    },
+    
+    {
       title: 'NAVIGATOR',
-      color: '#9c27b0',
-      icon: '/navigator.png',
+      color: 'white',
+      icon: '/navigator1.png',
       tagline: 'Invest in a Decentralized Fashion',
       description: 'Embrace a new era of transparent investing without management fees or hidden charges, ensuring clarity and control over your investments.',
       services: [
@@ -31,10 +80,11 @@ const Ecosystem = ({ id }) => {
       ],
     
     },
+    
     {
       title: 'ACCELERATOR',
-      color: '#4caf50',
-      icon: '/accelarator.png',
+      color: 'white',
+      icon: '/accelarator1.png',
       tagline: 'Fueling Web3.0 Startups',
       description: 'Tailored Strategies, Investor-Ready Pitch Decks, Competitive Market Insights, and Expert White Paper Development for Blockchain Success.',
       services: [
@@ -44,52 +94,8 @@ const Ecosystem = ({ id }) => {
         'Strategizing and Developing White & Lite Papers',
       ],
     },
-    {
-      title: 'FOUNDRY',
-      color: '#ff9800',
-      icon: '/foundry.png',
-      tagline: 'Empowering DAO Formation & Token Creation',
-      description: 'Founded by tokensmiths and DAO curators of Finwing to empower DAO formation and token creation with strategic campaigns, transparent governance, and expert treasury management.',
-      services: [
-        'Token Creation & Management',
-        'Token Airdrops & Campaigns',
-        'DAO Formation & Governance',
-        'DAO Treasury Management',
-      ],
-    },
-    {
-      title: 'ARCHITECT',
-      color: '#ff5722',
-      icon: '/architect.png',
-      tagline: 'Revolutionizing Businesses through Seamless Blockchain Integration',
-      description: 'For Greater Efficiency, Security, and Growth.',
-      services: [
-        'Blockchain Solution for Supply Chain Management',
-        'Integrating Financial Accounting On Chain',
-        'Tracking Employee Management through Blockchain',
-      ],
-    },
-    {
-      title: 'VAULTS',
-      color: '#A52A2A',
-      icon: '/vaults.png',
-      tagline: 'Navigating the Future of Web3.0 Finance with Finwing Investment Vaults',
-      description: 'Testnet Phase ⅔ Ongoing.',
-      services: [],
-      grandVisual: true, // Indicating this item should have grand visuals
-    },
-    {
-      title: 'INSIGHTS',
-      color: '#1976d2',
-      icon: '/insights.png',
-      tagline: 'Unlocking Strategic Insights',
-      description: 'Analytics, trends, and knowledge to keep you ahead in the rapidly evolving digital landscape.',
-      services: [
-        'Market Analytics',
-        'Industry Trends',
-        'Strategic Knowledge Base',
-      ],
-    },
+    
+    
   ];
   
 
@@ -122,29 +128,55 @@ const Ecosystem = ({ id }) => {
         }}
       />
 
-      <Typography
-        variant="overline"
-        sx={{ color: '#1976d2', letterSpacing: '3px', mb: 2, pb: 2 }}
-      >
-        ECOSYSTEM
-      </Typography>
+<Box display="flex" justifyContent="center" alignItems="center">
+          <img
+            src="/section.png" // Replace with your image path or URL
+            alt="Icon"
+            style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#FFFFFF', // White text color
+              fontWeight: 'bold',
+              letterSpacing: '2px' // Adjust letter spacing
+            }} // Remove mb and pb for better alignment
+          >
+            ECOSYSTEM
+          </Typography>
+        </Box>
 
       <Box textAlign="center" mb={40} sx={{ position: 'relative', zIndex: 1 }}>
         <Typography
           variant="h1"
           fontWeight="bold"
-          mb={2}
-          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '3rem' } }}
+          mb={0}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2.7rem' } }}
         >
-          <span style={{ color: 'white' }}>We are on a mission</span>{' '}
-          <span style={{ color: '#1976d2' }}>to democratize information</span>
+          <span style={{ color: 'white' }}>We Are On A Mission</span>{' '}
+         
+        </Typography>
+        <Typography
+          variant="h1"
+          fontWeight="bold"
+          mb={3}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '3.5rem' } }}
+        >
+         
+          <span style={{ color: '#1976d2' }}>Democratizing Finance & Information</span>
         </Typography>
         <Typography
           variant="body1"
-          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.1rem' } }}
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.3rem' } }}
         >
-          Ready to guide you through the evolutionary phase, turning the transition into a financial opportunity for everyone.
+          Ready to guide you through the evolutionary phase, turning the transition into a financial opportunity for everyone!
         </Typography>
+        {/* <Typography
+          variant="body1"
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.3rem' } }}
+        >
+          turning the transition into a financial opportunity for everyone!
+        </Typography> */}
       </Box>
 
       <Box
@@ -173,8 +205,8 @@ const Ecosystem = ({ id }) => {
           />
         </Box>
        {hoveredItem && <Box sx={{position: 'absolute',
-          top: '-5%',
-          left: '15%',}}> <Services item={hoveredItem}></Services></Box>}
+          top: '4%',
+          left: '10%',}}> <Services item={hoveredItem}></Services></Box>}
 
         {surroundingItems.map((item, index) => {
           const angle = (index / surroundingItems.length) * (2 * Math.PI);

@@ -5,7 +5,7 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
-import BackgroundImage from '/architect.png'; // Replace with your background image
+import BackgroundImage from '/architect1.png'; // Replace with your background image
 import { motion, useInView } from 'framer-motion';
 
 const FinwingArchitect = ({id}) => {
@@ -30,7 +30,7 @@ const FinwingArchitect = ({id}) => {
   };
 
   return (
-    <Box id={id} sx={{ backgroundColor: '#08080e', py: 8 }}>
+    <Box id={id} sx={{ backgroundColor: '#08080e', py: 0 }}>
       {/* Header Section with Background Image */}
       <Box
         sx={{
@@ -54,20 +54,56 @@ const FinwingArchitect = ({id}) => {
               letterSpacing: '2px',
             }}
           >
-            Finwing Architect
+            <span style={{ color: '#1a73e8' }}>Finwing</span> Architect
           </Typography>
           <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
             Your Blueprint for Trust, Efficiency, and Innovation
           </Typography>
         </Container>
       </Box>
+      {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+        <img
+          src="/section.png" // Replace with your image path or URL
+          alt="Icon"
+          style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+        />
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#FFFFFF', // White text color
+            fontWeight: 'bold',
+            letterSpacing: '2px' // Adjust letter spacing
+          }} // Remove mb and pb for better alignment
+        >
+          ARCHITECT
+        </Typography>
+      </Box>
+      <Box textAlign="center" mb={0} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="body1"
+          sx={{ fontSize: { xs: '1rem', sm: '1.25rem', md: '1.1rem' } }}
+        >
+          Your Blueprint for Trust, Efficiency, and Innovation
+        </Typography>
+
+      </Box> */}
 
       {/* Intro Section */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }} >
+      <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="h1"
+          fontWeight="bold"
+          mb={2}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+        >
+          <span style={{ color: 'white' }}>Why Blockchain?</span>{' '}
+          <span style={{ color: '#1976d2' }}> Why Now?</span>
+        </Typography>
+        
+      </Box>
         <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
-            Why Blockchain? Why Now?
-          </Typography>
+          
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             In today’s fast-paced, digitized world, organizations need transparency, security, and efficiency more than ever. Whether managing supply chains, financial records, or sensitive employee data, blockchain offers a revolutionary solution. It provides decentralized, tamper-proof records, enabling more secure, auditable, and streamlined operations.
           </Typography>
@@ -247,10 +283,20 @@ const FinwingArchitect = ({id}) => {
 
       {/* Call to Action */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 ,mt:15}}>
+      <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+        <Typography
+          variant="h1"
+          fontWeight="bold"
+          mb={2}
+          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+        >
+          <span style={{ color: 'white' }}> Blockchain: The Next Evolution</span>{' '}
+          <span style={{ color: '#1976d2' }}> in Digital Operations</span>
+        </Typography>
+        
+      </Box>
         <Box sx={{ mb: 6 }}>
-          <Typography variant="h4" sx={{ color: '#ffffff', mb: 3 }}>
-            Blockchain: The Next Evolution in Digital Operations
-          </Typography>
+          
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Blockchain isn't just a trend—it’s a transformative technology that can improve efficiency, security, and trust across all industries.
           </Typography>

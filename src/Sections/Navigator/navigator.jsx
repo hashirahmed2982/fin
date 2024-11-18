@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, Container, Grid } from '@mui/material';
+import { Box, Typography, Container, Grid, Icon } from '@mui/material';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'; // Import useInView
@@ -12,8 +12,9 @@ import graph1 from '/graph.jpg'; // Import your graph images
 import graph2 from '/graph2.jpg';
 import graph3 from '/graph3.jpg';
 import graph4 from '/graph4.jpg';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import AliceCarousel from 'react-alice-carousel';
+import BackgroundImage from '/navigator1.png';
+
+
 import './style.css';
 const statements = [
   {
@@ -34,7 +35,7 @@ const statements = [
 ];
 const graphs = [graph1, graph2, graph3, graph4];
 
-const Navigator = ({ onIndexChange ,id}) => {
+const Navigator = ({ onIndexChange, id }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScroll, setCanScroll] = useState(true);
   const timerRef = useRef(null);
@@ -89,107 +90,130 @@ const Navigator = ({ onIndexChange ,id}) => {
   }, [currentIndex, canScroll, inView]); // Add inView as a dependency
 
   return (
-    
-      <Box
+
+    <Box
       id={id}
-        ref={ref}
-        component="section"
+      ref={ref}
+      component="section"
+      sx={{
+        position: 'relative',
+        minHeight: '400px',
+        height: 'auto',
+        overflow: 'hidden',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 4,
+        mt: 33,
+        
+      }}
+    >
+      
+      <Container maxWidth="xl">
+      <Box
         sx={{
-          position: 'relative',
-          minHeight: '400px',
-          height: 'auto',
-          overflow: 'hidden',
-          color: 'white',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: 4,
-          mt:25
+          background: `linear-gradient(to bottom, rgba(8, 8, 14, 1) 0%, rgba(8, 8, 14, 0.7) 40%, rgba(8, 8, 14, 0.7) 60%, rgba(8, 8, 14, 1) 100%), url(${BackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          py: 12,
+          textAlign: 'center',
+          color: '#ffffff',
+          mb:5
         }}
       >
-        
-        <Container maxWidth="xl">
-        <Typography variant="h6"
-          sx={{  color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
-          Navigator
-        </Typography>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.8, ease: 'easeInOut' }}
+        <Container sx={{ position: 'relative', zIndex: 2 }}>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}>
+            <span style={{ color: '#1a73e8' }}>Finwing</span> Navigator
+          </Typography>
+          {/* <Typography variant="h6" sx={{ opacity: 0.9 }}>
+            Launch, Scale & Sustain your Web3.0 Project
+          </Typography> */}
+        </Container>
+      </Box>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+              >
+                <Typography
+                  variant="h3"
+                  gutterBottom
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: '2.5rem',
+
+                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                  }}
                 >
+                  <span style={{ color: '#white' }}>
+                    {statements[currentIndex].text.slice(0, statements[currentIndex].text.length / 2)}
+                  </span>
+                  <span style={{ color: '#1976d2' }}>
+                    {statements[currentIndex].text.slice(statements[currentIndex].text.length / 2)}
+                  </span>
+                </Typography>
+                {currentIndex < 2 ? (
                   <Typography
-                    variant="h3"
-                    gutterBottom
+                    variant="body1"
                     sx={{
-                      fontWeight: 700,
-                      fontSize: '2.5rem',
-                      color: '#ffcc00',
-                      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                      fontSize: '1.25rem',
+                      color: '#ffffff',
+                      marginTop: '1rem',
                     }}
                   >
-                    {statements[currentIndex].text}
+                    {statements[currentIndex].description}
                   </Typography>
-                  {currentIndex < 2 ? (
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: '1.25rem',
-                        color: '#ffffff',
-                        marginTop: '1rem',
-                      }}
-                    >
-                      {statements[currentIndex].description}
-                    </Typography>
-                  ) : (
+                ) : (
                   <graph1></graph1>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.8, ease: 'easeInOut' }}
-                >
-                  
-                    <Box
-                      component="img"
-                      src={statements[currentIndex].image}
-                      alt={`image-${currentIndex + 1}`}
-                      sx={{
-                        maxHeight: '400px',
-                        maxWidth: '500px',
-                        width: '100%',
-                        height: '100%',
-                        borderRadius: 3,
-                        boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-                        objectFit: 'contain',
-                      }}
-                    />
-                 
-                    
-                     
-                   
-                  
-                </motion.div>
-              </AnimatePresence>
-            </Grid>
+                )}
+              </motion.div>
+            </AnimatePresence>
           </Grid>
-        </Container>
-        
-      </Box>
-    
+
+          <Grid item xs={12} md={6}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.8, ease: 'easeInOut' }}
+              >
+
+                <Box
+                  component="img"
+                  src={statements[currentIndex].image}
+                  alt={`image-${currentIndex + 1}`}
+                  sx={{
+                    maxHeight: '400px',
+                    maxWidth: '500px',
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: 3,
+                    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                    objectFit: 'contain',
+                  }}
+                />
+
+
+
+
+
+              </motion.div>
+            </AnimatePresence>
+          </Grid>
+        </Grid>
+      </Container>
+
+    </Box>
+
   );
 };
 

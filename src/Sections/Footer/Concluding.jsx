@@ -1,125 +1,119 @@
-import React from 'react';
-import { Box, Grid, Typography, TextField, Button } from '@mui/material';
-import AstronautImage from '/conn.png'; // Ensure this path is correct
+import React from "react";
+import { Box, Grid, Typography, TextField, Button } from "@mui/material";
+import AstronautImage from "/logo6.png"; // Ensure this path is correct
 
-const Concluding = ({id}) => {
+const Concluding = ({ id }) => {
   return (
     <Box
-    id={id}
+      id={id}
       sx={{
-        position: 'relative',
-        height: '60vh',
-        background: `radial-gradient(circle, #0701ef4d 0%, #08080e 45%)`, // Spotlight effect
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: '#fff',
+        position: "relative",
+        minHeight: "70vh",
+        background: `radial-gradient(circle, #0a0a33 0%, #08080e 45%)`, // Dark blue spotlight effect
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#fff",
         p: 8,
       }}
     >
-      <Grid container alignItems="center">
-        {/* Left Text */}
-        <Grid item xs={5} sx={{ textAlign: 'right', pr: 20 }}>
+      <Grid container alignItems="center" spacing={4}>
+        {/* Left Side: Text and Subscription */}
+        <Grid item xs={12} md={4.9} sx={{ textAlign: { xs: "center", md: "left" } , ml: {md: 16} }}>
+          {/* Title */}
           <Typography
             variant="h3"
             sx={{
-              fontWeight: '400',
-              textTransform: 'uppercase',
-              color: '#fff',
+              fontWeight: "700",
+              textTransform: "uppercase",
+              color: "#fff",
+              mb: 1,
             }}
           >
-            Be Part
-          </Typography>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: '400',
-              textTransform: 'uppercase',
-              color: '#2979ff', // Blue color for "Of Our"
-            }}
-          >
-            Of Our
-          </Typography>
-        </Grid>
-
-        {/* Center Image */}
-        <Grid item xs={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Box
-            component="img"
-            src={AstronautImage}
-            alt="Astronaut"
-            sx={{ width: '150%', maxWidth: '600px' }}
-          />
-        </Grid>
-
-        {/* Right Text */}
-        <Grid item xs={5} sx={{ textAlign: 'left', pl: 20 }}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: '400',
-              textTransform: 'uppercase',
-              color: '#2979ff', // Blue color for "Our"
-            }}
-          >
-            Our
+            Be Part of
           </Typography>
           <Typography
             variant="h3"
             sx={{
-              fontWeight: '400',
-              textTransform: 'uppercase',
-              color: '#fff',
+              fontWeight: "700",
+              textTransform: "uppercase",
+              color: "#2979ff",
+              mb: 3,
             }}
           >
-            Mission
+            Our Mission
           </Typography>
-        </Grid>
-
-        {/* Subscribe Section */}
-        <Grid item xs={12} sx={{ mt: 4, textAlign: 'center' }}>
-          <Typography variant="h6" sx={{ mb: 2 }}>
-            Subscribe to Our Newsletter
+          {/* Description */}
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: "1.1rem",
+              color: "#c2c2c2",
+              mb: 4,
+              maxWidth: "400px",
+              mx: { xs: "auto", md: "0" },
+            }}
+          >
+            Join us as we innovate and inspire. Subscribe to stay updated with the latest news and initiatives!
           </Typography>
+          {/* Subscription Section */}
           <Box
             component="form"
             sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              justifyContent: { xs: "center", md: "flex-start" },
+              alignItems: "center",
               gap: 2,
-              maxWidth: '600px', // Max width of the entire form
-              margin: '0 auto',
+              maxWidth: "500px",
+              mx: { xs: "auto", md: "0" }, // Center on small screens
             }}
           >
             <TextField
               variant="outlined"
               placeholder="Enter your email"
               sx={{
-                bgcolor: '#585a5f69',
-                color: "#fff",
-                width: '70%', // Wider width for modern look
-                 height: 'auto'// Reduce height for sleekness
+                flex: 1,
+                bgcolor: "rgba(255, 255, 255, 0.08)",
+                borderRadius: "5px",
+                input: { color: "#fff" },
+                border: "1px solid #2979ff", // Subtle border to match theme
               }}
             />
             <Button
               variant="contained"
-              color="primary"
               sx={{
-                bgcolor: '#2979ff',
-                color: '#fff',
-                textTransform: 'uppercase',
-                fontWeight: 'bold',
-                 // Match the height of TextField
-                px: 4, // Padding for button width
-                '&:hover': {
-                  bgcolor: '#1c54b2',
+                bgcolor: "#2979ff",
+                color: "#fff",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                px: 4,
+                "&:hover": {
+                  bgcolor: "#1c54b2",
                 },
               }}
             >
               Subscribe
             </Button>
           </Box>
+        </Grid>
+
+        {/* Right Side: Image */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-end" } }}
+        >
+          <Box
+            component="img"
+            src={AstronautImage}
+            alt="Astronaut"
+            sx={{
+              maxWidth: "80%",
+              height: "60%",
+            }}
+          />
         </Grid>
       </Grid>
     </Box>

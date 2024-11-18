@@ -79,13 +79,27 @@ const InsightBox = ({ imageUrl, title, subtitle, description, date, timeToRead }
   );
 };
 
-const Insights = ({id}) => {
+const Insights = ({ id }) => {
   return (
     <Box id={id} sx={customStyles.container}>
       <Container maxWidth="lg" sx={{ maxWidth: '1000px' }}>
-        <Typography variant="h6" sx={{ color: '#f9b81f', letterSpacing: '3px', mb: 2, pb: 2 }}>
-          Insights
-        </Typography>
+        <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+          <img
+            src="/section.png" // Replace with your image path or URL
+            alt="Icon"
+            style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+          />
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#FFFFFF', // White text color
+              fontWeight: 'bold',
+              letterSpacing: '2px' // Adjust letter spacing
+            }} // Remove mb and pb for better alignment
+          >
+            INSIGHTS
+          </Typography>
+        </Box>
         <Typography variant="h1"
           fontWeight="bold"
           mb={2}

@@ -19,17 +19,17 @@ const Services = ({ item }) => {
     <Box
       className="info-card"
       sx={{
-        backgroundColor:  'linear-gradient(145deg, rgba(28, 28, 28, 0.9), rgba(48, 48, 48, 0.9))',
+        backgroundColor: 'linear-gradient(145deg, rgba(28, 28, 28, 0.9), rgba(48, 48, 48, 0.9))',
         borderRadius: 3,
-        border:  '1px solid rgba(21, 30, 54, 0.8)',
-        boxShadow:  '0 6px 15px rgba(0, 0, 0, 0.5)',
+        border: '1px solid rgba(21, 30, 54, 0.8)',
+        boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)',
         color: 'white',
         padding: '20px',
         width: '270px',
         transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
         '&:hover': {
-          transform:  'scale(1.05)',
-          boxShadow:  '0 10px 20px rgba(0, 0, 0, 0.7)',
+          transform: 'scale(1.05)',
+          boxShadow: '0 10px 20px rgba(0, 0, 0, 0.7)',
         },
       }}
     >
@@ -41,11 +41,16 @@ const Services = ({ item }) => {
           fontWeight: '600',
           fontSize: '1.4rem', // Beautiful larger font for title
           letterSpacing: '0.5px', // Slight letter spacing for elegance
-          color: '#f5f5f5', // Bright white for contrast
-          textShadow: '1px 1px 5px rgba(255, 223, 186, 0.7)', // Subtle shadow for depth
+          
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)'
         }}
       >
-        {item.title}
+        <span style={{ color: '#white' }}>
+          {item.title.slice(0, item.title.length / 2)}
+        </span>
+        <span style={{ color: '#1976d2' }}>
+          {item.title.slice(item.title.length / 2)}
+        </span>
       </Typography>
 
       {/* Tagline */}
@@ -54,14 +59,14 @@ const Services = ({ item }) => {
         sx={{
           mb: 1,
           fontWeight: 'bold', // Increased font weight for better prominence
-          color:  '#FFFFFF', // Slightly brighter for contrast
+          color: '#FFFFFF', // Slightly brighter for contrast
           textShadow: '1px 1px 3px rgba(0, 0, 0, 0.6)', // Added shadow for depth
         }}
       >
         {item.tagline}
       </Typography>
 
-      {/* Description */}
+      {/* Description
       <Typography
         variant="body1"
         sx={{
@@ -72,7 +77,7 @@ const Services = ({ item }) => {
         }}
       >
         {item.description}
-      </Typography>
+      </Typography> */}
 
       {/* Services */}
       {item.services.map((service, idx) => (
@@ -80,14 +85,14 @@ const Services = ({ item }) => {
           key={idx}
           variant="body2"
           sx={{
-            color: '#8ab4f8', // Soft blue color for services
+            color: 'white', // Soft blue color for services
             mb: 1, // Spacing between services
             fontSize: '0.95rem', // Keep the same size as points
             lineHeight: '1.5',
-            fontWeight: '500', // Medium bold
+            fontWeight: 'bold', // Medium bold
             '&:before': {
               content: '"• "',
-              color: '#6ea1f5', // Lighter blue bullet
+              color: 'white', // Lighter blue bullet
               fontSize: '1.2rem',
               marginRight: '8px',
             },
@@ -103,18 +108,23 @@ const Services = ({ item }) => {
           variant="body2"
           sx={{
             mt: 3, // Spacing before CTA
-            color: '#FFD700', // Gold color for CTA to draw attention
+            
             fontWeight: 'bold',
             textAlign: 'center',
             fontSize: '1.2rem', // Make CTA larger for emphasis
             cursor: 'pointer',
             '&:hover': {
-              color: '#ffffff', // White on hover
+              
               textDecoration: 'underline', // Underline on hover for interaction
             },
           }}
         >
-          Join the waitlist. {/* Displaying the waitlist message */}
+          <span style={{ color: '#white' }}>
+          Join the
+        </span>
+        <span style={{ color: '#1976d2' }}>
+          waitlist.
+        </span>
         </Typography>
       )}
     </Box>

@@ -17,6 +17,7 @@ import FinwingAccelerator from './Sections/accelarator/accelarator';
 import FinwingFoundry from './Sections/foundry/foundry';
 import FinwingArchitect from './Architect/architect';
 import ContactForm from './Sections/Footer/ContactForm';
+import FloatingPopup from './popup';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -64,6 +65,7 @@ function App() {
       <Concluding id="concluding" />
       <ContactForm id="contact" />
       <Footer id="footer" />
+      <FloatingPopup></FloatingPopup>
     </>
   );
 }
