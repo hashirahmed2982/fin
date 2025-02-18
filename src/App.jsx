@@ -18,6 +18,8 @@ import FinwingFoundry from './Sections/foundry/foundry';
 import FinwingArchitect from './Architect/architect';
 import ContactForm from './Sections/Footer/ContactForm';
 import FloatingPopup from './popup';
+import EcosystemWrapper from './Sections/Ecosystem/eco';
+import RoadmapWrapper from './Sections/Roadmap/road';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -53,7 +55,7 @@ function App() {
       <Navbar />
       <Banner id="banner" />
       <Overview id="overview" />
-      <Ecosystem id="ecosystem" />
+      <EcosystemWrapper id="ecosystem" />
       <Navigator id="navigator" onIndexChange={handleIndexChange}/>
       <Risk id="risk" />
       <FinwingAccelerator id="accelerator" />
@@ -61,7 +63,7 @@ function App() {
       <FinwingArchitect id="architect" />
       <Map id="map" />
       <Insights id="insights" />
-      <Roadmap id="roadmap" />
+      <RoadmapWrapper id="roadmap" />
       <Concluding id="concluding" />
       <ContactForm id="contact" />
       <Footer id="footer" />
