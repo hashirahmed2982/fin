@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, useMediaQuery } from '@mui/material';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
@@ -8,10 +8,10 @@ import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import BackgroundImage from '/architect1.png'; // Replace with your background image
 import { motion, useInView } from 'framer-motion';
 
-const FinwingArchitect = ({id}) => {
+const FinwingArchitect = ({ id }) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-50px' });
-
+  const isMobile = useMediaQuery('(max-width:768px)');
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -44,19 +44,14 @@ const FinwingArchitect = ({id}) => {
           position: 'relative',
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
+        <Container sx={{ position: 'relative', zIndex: 2, textAlign: isMobile ? 'center' : 'center' }}>
           <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 'bold',
-              mb: 3,
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-            }}
+            variant={isMobile ? 'h4' : 'h3'}
+            sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}
           >
             <span style={{ color: '#1a73e8' }}>Finwing</span> Architect
           </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
+          <Typography variant={isMobile ? 'body1' : 'h6'} sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
             Your Blueprint for Trust, Efficiency, and Innovation
           </Typography>
         </Container>
@@ -90,20 +85,20 @@ const FinwingArchitect = ({id}) => {
 
       {/* Intro Section */}
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 }} >
-      <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
-        <Typography
-          variant="h1"
-          fontWeight="bold"
-          mb={2}
-          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
-        >
-          <span style={{ color: 'white' }}>Why Blockchain?</span>{' '}
-          <span style={{ color: '#1976d2' }}> Why Now?</span>
-        </Typography>
-        
-      </Box>
+        <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+          <Typography
+            variant="h1"
+            fontWeight="bold"
+            mb={2}
+            sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+          >
+            <span style={{ color: 'white' }}>Why Blockchain?</span>{' '}
+            <span style={{ color: '#1976d2' }}> Why Now?</span>
+          </Typography>
+
+        </Box>
         <Box sx={{ mb: 6 }}>
-          
+
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             In today’s fast-paced, digitized world, organizations need transparency, security, and efficiency more than ever. Whether managing supply chains, financial records, or sensitive employee data, blockchain offers a revolutionary solution. It provides decentralized, tamper-proof records, enabling more secure, auditable, and streamlined operations.
           </Typography>
@@ -125,178 +120,178 @@ const FinwingArchitect = ({id}) => {
         <Grid container spacing={4}>
           {/* Supply Chain Management */}
           <Grid item xs={12} md={4}>
-          <motion.div
-                variants={itemVariants}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-                custom={0} // Pass index to itemVariants for staggered effect
-              >
-            <Paper
-              elevation={4}
-              sx={{
-                p: 4,
-                backgroundColor: '#121212', // Dark background color
-                color: '#ffffff',
-                borderRadius: '8px',
-                minHeight: '340px',
-                alignItems: 'center',
-                textAlign: 'center',
-                position: 'relative', // Needed for the spotlight effect
-                background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
-                boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
-                border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
-                transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
-                '&:hover': {
-                  transform: 'scale(1.02)', // Slightly scale up on hover
-                  border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
-                },
-              }}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              custom={0} // Pass index to itemVariants for staggered effect
             >
-              <LocalShippingIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
-              <Typography
-                variant="h6"
+              <Paper
+                elevation={4}
                 sx={{
-                  fontWeight: 'bold',
-                  mb: 2,
-                  textTransform: 'uppercase',
+                  p: 4,
+                  backgroundColor: '#121212', // Dark background color
                   color: '#ffffff',
+                  borderRadius: '8px',
+                  minHeight: '340px',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  position: 'relative', // Needed for the spotlight effect
+                  background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
+                  boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
+                  border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
+                  transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
+                  '&:hover': {
+                    transform: 'scale(1.02)', // Slightly scale up on hover
+                    border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
+                  },
                 }}
               >
-                Supply Chain Management
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
-                Track your product journey from origin to consumer with transparency and traceability.
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
-                Streamline operations and reduce inefficiencies with decentralized tracking systems.
-              </Typography>
-              <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
-                Protect your brand with anti-counterfeiting solutions using blockchain verification tools.
-              </Typography>
-            </Paper>
+                <LocalShippingIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 'bold',
+                    mb: 2,
+                    textTransform: 'uppercase',
+                    color: '#ffffff',
+                  }}
+                >
+                  Supply Chain Management
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
+                  Track your product journey from origin to consumer with transparency and traceability.
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
+                  Streamline operations and reduce inefficiencies with decentralized tracking systems.
+                </Typography>
+                <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
+                  Protect your brand with anti-counterfeiting solutions using blockchain verification tools.
+                </Typography>
+              </Paper>
             </motion.div>
           </Grid>
 
           {/* Financial Accounting */}
           <Grid item xs={12} md={4}>
-          <motion.div
-                variants={itemVariants}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-                custom={1} // Pass index to itemVariants for staggered effect
-              >
-            <Paper
-              elevation={4}
-              sx={{
-                p: 4,
-                backgroundColor: '#121212', // Dark background color
-                color: '#ffffff',
-                borderRadius: '8px',
-                minHeight: '340px',
-                alignItems: 'center',
-                textAlign: 'center',
-                position: 'relative', // Needed for the spotlight effect
-                background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
-                boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
-                border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
-                transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
-                '&:hover': {
-                  transform: 'scale(1.02)', // Slightly scale up on hover
-                  border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
-                },
-              }}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              custom={1} // Pass index to itemVariants for staggered effect
             >
-              <AccountBalanceWalletIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
-              <Typography
-                variant="h6"
+              <Paper
+                elevation={4}
                 sx={{
-                  fontWeight: 'bold',
-                  mb: 2,
-                  textTransform: 'uppercase',
+                  p: 4,
+                  backgroundColor: '#121212', // Dark background color
                   color: '#ffffff',
+                  borderRadius: '8px',
+                  minHeight: '340px',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  position: 'relative', // Needed for the spotlight effect
+                  background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
+                  boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
+                  border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
+                  transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
+                  '&:hover': {
+                    transform: 'scale(1.02)', // Slightly scale up on hover
+                    border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
+                  },
                 }}
               >
-                Financial Accounting
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
-                Create immutable, transparent financial records that simplify audits and lower fraud risk.
-              </Typography>
-              <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
-                Automate transactions with smart contracts, reducing errors and operational delays.
-              </Typography>
-            </Paper>
+                <AccountBalanceWalletIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 'bold',
+                    mb: 2,
+                    textTransform: 'uppercase',
+                    color: '#ffffff',
+                  }}
+                >
+                  Financial Accounting
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
+                  Create immutable, transparent financial records that simplify audits and lower fraud risk.
+                </Typography>
+                <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
+                  Automate transactions with smart contracts, reducing errors and operational delays.
+                </Typography>
+              </Paper>
             </motion.div>
           </Grid>
 
           {/* Employee Management */}
           <Grid item xs={12} md={4}>
-          <motion.div
-                variants={itemVariants}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-                custom={2} // Pass index to itemVariants for staggered effect
-              >
-            <Paper
-              elevation={4}
-              sx={{
-                p: 4,
-                backgroundColor: '#121212', // Dark background color
-                color: '#ffffff',
-                borderRadius: '8px',
-                minHeight: '340px',
-                alignItems: 'center',
-                textAlign: 'center',
-                position: 'relative', // Needed for the spotlight effect
-                background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
-                boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
-                border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
-                transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
-                '&:hover': {
-                  transform: 'scale(1.02)', // Slightly scale up on hover
-                  border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
-                },
-              }}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              custom={2} // Pass index to itemVariants for staggered effect
             >
-              <BusinessCenterIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
-              <Typography
-                variant="h6"
+              <Paper
+                elevation={4}
                 sx={{
-                  fontWeight: 'bold',
-                  mb: 2,
-                  textTransform: 'uppercase',
+                  p: 4,
+                  backgroundColor: '#121212', // Dark background color
                   color: '#ffffff',
+                  borderRadius: '8px',
+                  minHeight: '340px',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  position: 'relative', // Needed for the spotlight effect
+                  background: 'radial-gradient(circle at 50% 50%, rgba(57, 114, 255, 0.25) 0%, rgba(0, 0, 0, 0) 70%)', // Static gradient
+                  boxShadow: '0 6px 15px rgba(0, 0, 0, 0.5)', // Enhanced shadow
+                  border: '1px solid rgba(255, 255, 255, 0.1)', // Very dull white border
+                  transition: 'transform 0.3s ease, border-color 0.3s ease', // Transition for scaling and border color
+                  '&:hover': {
+                    transform: 'scale(1.02)', // Slightly scale up on hover
+                    border: '1px solid rgba(255, 255, 255, 0.4)', // Increase border visibility on hover
+                  },
                 }}
               >
-                Employee Management
-              </Typography>
-              <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
-                Implement secure, tamper-proof employee records, payroll management, and performance tracking.
-              </Typography>
-              <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
-                Develop token-based reward systems to drive engagement and performance.
-              </Typography>
-            </Paper>
+                <BusinessCenterIcon sx={{ fontSize: 48, color: '#1a73e8', mb: 2 }} />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 'bold',
+                    mb: 2,
+                    textTransform: 'uppercase',
+                    color: '#ffffff',
+                  }}
+                >
+                  Employee Management
+                </Typography>
+                <Typography variant="body2" sx={{ mb: 2, lineHeight: 1.5 }}>
+                  Implement secure, tamper-proof employee records, payroll management, and performance tracking.
+                </Typography>
+                <Typography variant="body2" sx={{ lineHeight: 1.5 }}>
+                  Develop token-based reward systems to drive engagement and performance.
+                </Typography>
+              </Paper>
             </motion.div>
           </Grid>
         </Grid>
       </Container>
 
       {/* Call to Action */}
-      <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8 ,mt:15}}>
-      <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
-        <Typography
-          variant="h1"
-          fontWeight="bold"
-          mb={2}
-          sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
-        >
-          <span style={{ color: 'white' }}> Blockchain: The Next Evolution</span>{' '}
-          <span style={{ color: '#1976d2' }}> in Digital Operations</span>
-        </Typography>
-        
-      </Box>
+      <Container maxWidth="lg" sx={{ textAlign: 'center', my: 8, mt: 15 }}>
+        <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
+          <Typography
+            variant="h1"
+            fontWeight="bold"
+            mb={2}
+            sx={{ fontSize: { xs: '2.5rem', sm: '4rem', md: '2rem' } }}
+          >
+            <span style={{ color: 'white' }}> Blockchain: The Next Evolution</span>{' '}
+            <span style={{ color: '#1976d2' }}> in Digital Operations</span>
+          </Typography>
+
+        </Box>
         <Box sx={{ mb: 6 }}>
-          
+
           <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Blockchain isn't just a trend—it’s a transformative technology that can improve efficiency, security, and trust across all industries.
           </Typography>

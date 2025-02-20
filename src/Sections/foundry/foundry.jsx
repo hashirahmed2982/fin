@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Paper, Divider } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, Divider, useMediaQuery } from '@mui/material';
 import LayersIcon from '@mui/icons-material/Layers';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import HowToVoteIcon from '@mui/icons-material/HowToVote';
@@ -9,10 +9,8 @@ import SecurityIcon from '@mui/icons-material/Security';
 import BackgroundImage from '/foundry1.png'; // Replace with your background image
 import { motion } from 'framer-motion';
 const FinwingFoundry = ({ id }) => {
-  const fadeIn = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-  };
+  const isMobile = useMediaQuery('(max-width:768px)');
+  
   return (
     <Box id={id} sx={{ backgroundColor: '#08080e', py: 8 }}>
       {/* Header Section with Background Image */}
@@ -28,22 +26,16 @@ const FinwingFoundry = ({ id }) => {
           position: 'relative',
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 'bold',
-              mb: 3,
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-            }}
-          >
-            <span style={{ color: '#1a73e8' }}>Finwing</span> Foundry
-          </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
-          
-          </Typography>
-        </Container>
+        <Container sx={{ position: 'relative', zIndex: 2, textAlign: isMobile ? 'center' : 'center' }}>
+        <Typography 
+          variant={isMobile ? 'h4' : 'h3'} 
+          sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}
+        >
+          <span style={{ color: '#1a73e8' }}>Finwing</span> Foundry
+        </Typography>
+        <Typography variant={isMobile ? 'body1' : 'h6'} sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
+        </Typography>
+      </Container>
       </Box>
       {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
         <img

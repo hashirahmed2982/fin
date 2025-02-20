@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Typography, Container, Grid, Paper } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, useMediaQuery } from '@mui/material';
 import { motion, useInView } from 'framer-motion';
 import BusinessIcon from '@mui/icons-material/Business';
 import BarChartIcon from '@mui/icons-material/BarChart';
@@ -10,6 +10,7 @@ import BackgroundImage from '/accelarator1.png';
 const FinwingAccelerator = ({ id }) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, margin: '-50px' });
+  const isMobile = useMediaQuery('(max-width:768px)');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -41,14 +42,17 @@ const FinwingAccelerator = ({ id }) => {
           color: '#ffffff',
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}>
-            <span style={{ color: '#1a73e8' }}>Finwing</span> Accelerator
-          </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9 }}>
-            Launch, Scale & Sustain your Web3.0 Project
-          </Typography>
-        </Container>
+        <Container sx={{ position: 'relative', zIndex: 2, textAlign: isMobile ? 'center' : 'center' }}>
+        <Typography 
+          variant={isMobile ? 'h4' : 'h3'} 
+          sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}
+        >
+          <span style={{ color: '#1a73e8' }}>Finwing</span> Accelerator
+        </Typography>
+        <Typography variant={isMobile ? 'body1' : 'h6'} sx={{ opacity: 0.9 }}>
+          Launch, Scale & Sustain your Web3.0 Project
+        </Typography>
+      </Container>
       </Box>
       {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
         <img

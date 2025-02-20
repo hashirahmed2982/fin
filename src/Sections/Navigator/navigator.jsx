@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Typography, Container, Grid, Icon } from '@mui/material';
+import { Box, Typography, Container, Grid, Icon, useMediaQuery } from '@mui/material';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer'; // Import useInView
@@ -36,6 +36,7 @@ const statements = [
 const graphs = [graph1, graph2, graph3, graph4];
 
 const Navigator = ({ onIndexChange, id }) => {
+  const isMobile = useMediaQuery('(max-width:768px)');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [canScroll, setCanScroll] = useState(true);
   const timerRef = useRef(null);
@@ -123,14 +124,16 @@ const Navigator = ({ onIndexChange, id }) => {
           mb:5
         }}
       >
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}>
-            <span style={{ color: '#1a73e8' }}>Finwing</span> Navigator
-          </Typography>
-          {/* <Typography variant="h6" sx={{ opacity: 0.9 }}>
-            Launch, Scale & Sustain your Web3.0 Project
-          </Typography> */}
-        </Container>
+        <Container sx={{ position: 'relative', zIndex: 2, textAlign: isMobile ? 'center' : 'center' }}>
+        <Typography 
+          variant={isMobile ? 'h4' : 'h3'} 
+          sx={{ fontWeight: 'bold', mb: 3, textTransform: 'uppercase', letterSpacing: '2px' }}
+        >
+          <span style={{ color: '#1a73e8' }}>Finwing</span> Navigator
+        </Typography>
+        <Typography variant={isMobile ? 'body1' : 'h6'} sx={{ opacity: 0.9, maxWidth: '800px', margin: '0 auto' }}>
+        </Typography>
+      </Container>
       </Box>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
