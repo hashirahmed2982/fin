@@ -20,6 +20,7 @@ import ContactForm from './Sections/Footer/ContactForm';
 import FloatingPopup from './popup';
 import EcosystemWrapper from './Sections/Ecosystem/eco';
 import RoadmapWrapper from './Sections/Roadmap/road';
+import ContactSection from './Sections/Footer/Contact';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -65,7 +66,7 @@ function App() {
       <Insights id="insights" />
       <RoadmapWrapper id="roadmap" />
       <Concluding id="concluding" />
-      <ContactForm id="contact" />
+      <ContactSection id="contact" />
       <Footer id="footer" />
       {/* <FloatingPopup></FloatingPopup> */}
     </>
