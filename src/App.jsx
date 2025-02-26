@@ -68,7 +68,7 @@ function App() {
       <Concluding id="concluding" />
       <ContactSection id="contact" />
       <Footer id="footer" />
-      {/* <FloatingPopup></FloatingPopup> */}
+       <FloatingPopup></FloatingPopup> 
     </>
   );
 }

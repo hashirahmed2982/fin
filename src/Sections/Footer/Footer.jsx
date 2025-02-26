@@ -1,69 +1,97 @@
-import React from 'react';
-import { Box, Typography, Link, IconButton, Grid } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import RedditIcon from '@mui/icons-material/Reddit';
-import Logo from '/logo.jpg'; // Import your logo
+import React from "react";
+import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import RedditIcon from "@mui/icons-material/Reddit";
+import LanguageIcon from "@mui/icons-material/Language";
+import Logo from "/logo3.png"; // Import your logo
 
 const Footer = () => {
   return (
-    <Box sx={{ bgcolor: '#08080e', color: '#fff', p: 4, background: `linear-gradient(to bottom,#000,#0f0c854d)` }}>
-      <Grid container spacing={4}>
-        {/* Logo and Social Links */}
-        <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-          <img src={Logo} alt="Finwing Logo" style={{ width: '150px', marginBottom: '16px' }} />
-          <Typography variant="body1" sx={{ mb: 2, fontWeight: 'bold' }}>
-            Managed by Finwing
+    <Box sx={{ bgcolor: "#08080e", color: "#fff", px: 26, py: 8, background: `linear-gradient(to bottom,#000,#0f0c854d)` }}>
+      <Grid container spacing={4} >
+        {/* Left Section */}
+        <Grid item xs={12} md={8} sx={{ textAlign: "left" }}>
+          <Typography variant="body2" sx={{ fontWeight: "bold", mb: 1 }}>
+            Managed by
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-            <IconButton href="#" aria-label="YouTube" color="inherit" sx={{ mr: 1 }}>
-              <YouTubeIcon />
-            </IconButton>
-            <IconButton href="#" aria-label="GitHub" color="inherit" sx={{ mr: 1 }}>
-              <GitHubIcon />
-            </IconButton>
-            <IconButton href="#" aria-label="Reddit" color="inherit" sx={{ mr: 1 }}>
-              <RedditIcon />
-            </IconButton>
-            <IconButton href="#" aria-label="Telegram" color="inherit">
-              <TelegramIcon />
-            </IconButton>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <img src={Logo} alt="Finwing Logo" style={{ width: "50px" }} />
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", fontSize: "20px", letterSpacing: "1px" }}
+            >
+              Finwing
+            </Typography>
           </Box>
-        </Grid>
-
-        {/* Finwing Links */}
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'center' }}>Finwing</Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {['Grants', 'Break', 'Media Kit', 'Careers', 'Disclaimer', 'Privacy Policy'].map((link, index) => (
-              <Link key={index} href="#" color="inherit" underline="hover" sx={{ mb: 1, textAlign: 'center' }}>
-                {link}
-              </Link>
+          <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
+            {[
+              { icon: <YouTubeIcon />, label: "YouTube" },
+              { icon: <GitHubIcon />, label: "GitHub" },
+              { icon: <RedditIcon />, label: "Reddit" },
+              { icon: <TelegramIcon />, label: "Telegram" },
+            ].map((item, index) => (
+              <IconButton
+                key={index}
+                href="#"
+                aria-label={item.label}
+                sx={{
+                  bgcolor: "rgba(255, 255, 255, 0.1)",
+                  color: "#848895",
+                  "&:hover": { bgcolor: "rgba(255, 255, 255, 0.2)" },
+                  borderRadius: "50%",
+                  width: 30,
+                  height: 30,
+                }}
+              >
+                {item.icon}
+              </IconButton>
             ))}
           </Box>
+          <Typography variant="body2" sx={{ mt: 2, color: "rgba(255, 255, 255, 0.6)" }}>
+            © 2024 Finwing. All rights reserved.
+          </Typography>
         </Grid>
 
-        {/* Additional Information (optional) */}
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', textAlign: 'center' }}>Contact Us</Typography>
-          <Typography variant="body2" sx={{ mb: 1, textAlign: 'center' }}>
+
+        {/* Middle Section */}
+        <Grid item xs={12} md={2} sx={{ textAlign: "left" }}>
+          <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>Quick Links</Typography>
+          {[
+            "Ecosystem",
+            "Newsletter",
+            "Contact us",
+            "Privacy Policy",
+          ].map((link, index) => (
+            <Typography key={index} sx={{ mb: 1 }}>
+              <Link href="#" color="#848895" underline="hover">
+                {link}
+              </Link>
+            </Typography>
+          ))}
+        </Grid>
+
+        {/* Right Section */}
+        <Grid item xs={12} md={2} sx={{ textAlign: "left" }}>
+          <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>Contact Us</Typography>
+          <Typography  color="#848895" sx={{ mb: 1, textAlign: 'left' }}>
             support@finwing.com
           </Typography>
-          <Typography variant="body2" sx={{ mb: 1, textAlign: 'center' }}>
+          <Typography  color="#848895" sx={{ mb: 1, textAlign: 'left' }}>
             +1 (123) 456-7890
           </Typography>
-          <Typography variant="body2" sx={{ textAlign: 'center' }}>
+          <Typography  color="#848895" sx={{ textAlign: 'left' }}>
             198 West 21th Street, Suite 721 New York NY 10016
           </Typography>
+
         </Grid>
       </Grid>
 
-      <Box sx={{ textAlign: 'center', mt: 4, borderTop: '1px solid rgba(255, 255, 255, 0.2)', pt: 2 }}>
-        <Typography variant="caption">
-          © 2024 Finwing. All rights reserved.
-        </Typography>
-      </Box>
+      {/* Bottom Section
+      <Box sx={{ textAlign: "center", mt: 4, borderTop: "1px solid rgba(255, 255, 255, 0.2)", pt: 2 }}>
+        <Typography variant="caption">© 2024 Finwing. All rights reserved.</Typography>
+      </Box> */}
     </Box>
   );
 };
