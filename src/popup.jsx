@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'; // Cool calendar icon
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CloseIcon from '@mui/icons-material/Close';
-import './popup.css'; // Styles for animations and layout
+import './popup.css';
 
 const FloatingPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show the popup on load, then toggle visibility every 15 seconds
     setIsVisible(true);
     const interval = setInterval(() => {
       setIsVisible((prev) => !prev);
-    }, 15000); // 15 seconds interval
+    }, 15000);
     return () => clearInterval(interval);
   }, []);
 
   const handleAppointmentClick = () => {
-    window.open("https://calendly.com/your-link", "_blank"); // Replace with your Calendly link
+    window.open("https://calendly.com/your-link", "_blank");
   };
 
   const handleClose = () => {
@@ -30,17 +29,17 @@ const FloatingPopup = () => {
       sx={{
         position: 'fixed',
         bottom: '20px',
-        right: '20px', // Adjust to "left: 20px" for bottom-left positioning
-        width: '300px',
-        background: 'rgba(0, 0, 0, 0.85)', // Darker background
+        right: { xs: '10px', sm: '20px' },
+        width: { xs: '90%', sm: '300px' },
+        background: 'rgba(0, 0, 0, 0.85)',
         borderRadius: '16px',
-        boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.7)', // Slight bluish shadow
-        color: '#fff', // White text
+        boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.7)',
+        color: '#fff',
         overflow: 'hidden',
         zIndex: 1000,
         display: 'flex',
         flexDirection: 'column',
-        backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.9) 50%, rgba(57, 114, 255, 0.3))', // Slight bluish spotlight
+        backgroundImage: 'radial-gradient(circle, rgba(0, 0, 0, 0.9) 50%, rgba(57, 114, 255, 0.3))',
       }}
     >
       <Box
@@ -55,11 +54,7 @@ const FloatingPopup = () => {
           Make an Appointment
         </Typography>
         <CloseIcon
-          sx={{
-            cursor: 'pointer',
-            color: '#fff',
-            fontSize: '20px',
-          }}
+          sx={{ cursor: 'pointer', color: '#fff', fontSize: '20px' }}
           onClick={handleClose}
         />
       </Box>

@@ -59,3 +59,17 @@
 .active {
   background-color: #1f03ad;
 }
+@media (max-width: 600px) {
+  .carousel-images{
+    max-height: 250px;
+
+  }
+  .carousel-images img {
+    max-height: 250px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
