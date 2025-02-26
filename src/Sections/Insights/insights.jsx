@@ -106,7 +106,7 @@ const Insights = ({ id }) => {
           sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '2.5rem' }, lineHeight: 1.2 }}>
           Your gateway to real-time analysis, expert reviews, and macroeconomic perspectives shaping the Web 3.0 landscape.
         </Typography>
-        <Grid container spacing={4}>
+        {/* <Grid container spacing={4}>
           <Grid item xs={12} sm={4}>
             <InsightBox
               imageUrl="https://insights.glassnode.com/content/images/2024/08/Group-137691791.png"
@@ -137,7 +137,7 @@ const Insights = ({ id }) => {
               timeToRead="4"
             />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
     </Box>
   );

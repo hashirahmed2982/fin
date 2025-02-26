@@ -127,10 +127,10 @@ const FinwingFoundry = ({ id }) => {
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
             Your DAO, Your Token, Our Expertise
             </Typography>
-            <Typography variant="body1" sx={{ color: '#c7c7c7', mb: 2 }}>
+            <Typography variant="body1" sx={{fontSize: '1.25rem', color: '#c7c7c7', mb: 2 }}>
             Empowering DAO Formation & Token Creation with Strategic Campaigns, Transparent Governance, and Expert Treasury Management.
             </Typography>
-            <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+            <Typography variant="body2" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6 }}>
             Finwing Foundry is your gateway to building resilient DAOs and sustainable tokenomics. We combine strategic planning, expert governance, and financial transparency to ensure your decentralized project thrives.
             </Typography>
           </Grid>
@@ -144,10 +144,10 @@ const FinwingFoundry = ({ id }) => {
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               Tokenomics: The Backbone of a Sustainable Crypto Project
             </Typography>
-            <Typography variant="body1" sx={{ color: '#c7c7c7', mb: 2 }}>
+            <Typography variant="body1" sx={{ fontSize: '1.25rem',color: '#c7c7c7', mb: 2 }}>
               Did you know? Most failed crypto projects collapsed due to flawed tokenomics. Let us help you avoid that pitfall by building a rock-solid economic foundation for your token.
             </Typography>
-            <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+            <Typography variant="body2" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6 }}>
               At Finwing Tokensmiths, we create custom tokens that fuel your ecosystem, balancing supply, demand, and utility. From ensuring compliance in token distribution to managing inflationary and deflationary mechanisms, we make tokenomics the backbone of your project's success.
             </Typography>
           </Grid>
@@ -199,10 +199,10 @@ const FinwingFoundry = ({ id }) => {
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               Token Airdrops & Campaigns: Boosting Engagement
             </Typography>
-            <Typography variant="body1" sx={{ color: '#c7c7c7', mb: 2 }}>
+            <Typography variant="body1" sx={{fontSize: '1.25rem', color: '#c7c7c7', mb: 2 }}>
               A well-planned token airdrop can be the catalyst for widespread adoption and community engagement. We offer end-to-end campaign management, from planning and executing strategic airdrops to ensuring community involvement.
             </Typography>
-            <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+            <Typography variant="body2" sx={{fontSize: '1.25rem', color: '#c7c7c7', lineHeight: 1.6 }}>
               Amplify your reach with marketing strategies that turn airdrops into a powerful engagement tool, fostering loyalty and expanding your project's influence.
             </Typography>
           </Grid>
@@ -352,10 +352,10 @@ const FinwingFoundry = ({ id }) => {
             <Typography variant="h4" sx={{ color: '#1a73e8', mb: 3 }}>
               DAO Treasury Management: Secure Your DAO’s Financial Future
             </Typography>
-            <Typography variant="body1" sx={{ color: '#c7c7c7', mb: 2 }}>
+            <Typography variant="body1" sx={{fontSize: '1.25rem', color: '#c7c7c7', mb: 2 }}>
               Managing a DAO’s treasury requires expert financial strategies, transparency, and accountability. We provide ongoing support for fund allocation, investment strategies, and transparent reporting systems.
             </Typography>
-            <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+            <Typography variant="body2" sx={{fontSize: '1.05rem', color: '#c7c7c7', lineHeight: 1.6 }}>
               Our team helps you develop and execute strategies for managing DAO funds with an eye on risk management and long-term growth, ensuring your DAO’s financial security.
             </Typography>
           </Grid>

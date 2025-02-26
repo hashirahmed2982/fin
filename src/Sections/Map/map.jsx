@@ -109,9 +109,9 @@ const Map = ({id}) => {
           <Typography variant="h4" component="span" sx={{ color: 'white', display: 'block', fontWeight: 'bold' }}>
           {clients}+ Clients
           </Typography>
-          <Typography variant="h4" component="span" sx={{ color: 'white', display: 'block', fontWeight: 'bold' }}>
+          {/* <Typography variant="h4" component="span" sx={{ color: 'white', display: 'block', fontWeight: 'bold' }}>
           ${Math.floor(revenue / 100)}k+
-          </Typography>
+          </Typography> */}
         </Box>
 
         {/* Map image */}

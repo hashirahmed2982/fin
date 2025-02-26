@@ -66,6 +66,7 @@ const Risk = ({id}) => {
               <Typography
                 variant="body1"
                 sx={{
+                  fontSize: '1.25rem',
                   color: 'white',
                   mb: 2,
                 }}

@@ -28,6 +28,7 @@ const Ecosystem = ({ id }) => {
         'Integrating Financial Accounting On Chain',
         'Tracking Employee Management through Blockchain',
       ],
+      scroll : 'architect'
     },
     
     
@@ -42,6 +43,7 @@ const Ecosystem = ({ id }) => {
         'Industry Trends',
         'Strategic Knowledge Base',
       ],
+      scroll : 'insights'
     },
     {
       title: 'VAULTS',
@@ -51,6 +53,7 @@ const Ecosystem = ({ id }) => {
       description: 'Testnet Phase ⅔ Ongoing.',
       services: [],
       grandVisual: true, // Indicating this item should have grand visuals
+      scroll : 'vaults'
     },
     {
       title: 'FOUNDRY',
@@ -64,6 +67,7 @@ const Ecosystem = ({ id }) => {
         'DAO Formation & Governance',
         'DAO Treasury Management',
       ],
+      scroll : 'foundry'
     },
     
     {
@@ -78,6 +82,7 @@ const Ecosystem = ({ id }) => {
         'Smart Crypto Portfolio Consultancy',
         'Generating Risk Averse Alpha Returns',
       ],
+      scroll : 'navigator'
     
     },
     
@@ -93,10 +98,18 @@ const Ecosystem = ({ id }) => {
         'Competitive Analysis Report',
         'Strategizing and Developing White & Lite Papers',
       ],
+      scroll : 'accelerator'
     },
     
     
   ];
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      
+    }
+  };
   
 
   const radius = 320;
@@ -132,7 +145,7 @@ const Ecosystem = ({ id }) => {
           <img
             src="/section.png" // Replace with your image path or URL
             alt="Icon"
-            style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+            style={{ width: 100, height: 'auto', marginRight: 2, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
           />
           <Typography
             variant="h6"
@@ -238,6 +251,7 @@ const Ecosystem = ({ id }) => {
               }}
               onMouseEnter={() => handleMouseEnter(item)}
               onMouseLeave={handleMouseLeave}
+              onClick={() => handleScroll(item.scroll)}
             >
               <Box
                 sx={{

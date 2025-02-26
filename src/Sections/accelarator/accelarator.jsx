@@ -49,7 +49,7 @@ const FinwingAccelerator = ({ id }) => {
         >
           <span style={{ color: '#1a73e8' }}>Finwing</span> Accelerator
         </Typography>
-        <Typography variant={isMobile ? 'body1' : 'h6'} sx={{ opacity: 0.9 }}>
+        <Typography variant={isMobile ? 'body1' : 'h6'} sx={{fontSize: '1.25rem', opacity: 0.9 }}>
           Launch, Scale & Sustain your Web3.0 Project
         </Typography>
       </Container>
@@ -84,7 +84,7 @@ const FinwingAccelerator = ({ id }) => {
       <Container maxWidth="lg" sx={{ textAlign: 'center', my: 10 }}>
         <Box sx={{ mb: 8 }}>
           <LayersIcon sx={{ fontSize: 64, color: '#1a73e8', mb: 3 }} />
-          <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
+          <Typography variant="body1" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Over 80% of Web3.0 startups fail due to lack of proper market positioning, flawed business models, and weak investor narratives. It doesn’t have to be that way.
           </Typography>
           <Box textAlign="center" mb={2} sx={{ position: 'relative', zIndex: 1 }}>
@@ -102,7 +102,7 @@ const FinwingAccelerator = ({ id }) => {
           {/* <Typography variant="h6" sx={{ color: '#ffffff', mb: 4, letterSpacing: '1px' }}>
             ""
           </Typography> */}
-          <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+          <Typography variant="body1" sx={{fontSize: '1.25rem', color: '#c7c7c7', lineHeight: 1.6 }}>
             We offer tailored strategies, investor-ready pitch decks, competitive market insights, and expert white paper development to ensure your startup's success.
           </Typography>
         </Box>

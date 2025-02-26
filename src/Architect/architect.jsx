@@ -99,10 +99,10 @@ const FinwingArchitect = ({ id }) => {
         </Box>
         <Box sx={{ mb: 6 }}>
 
-          <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
+          <Typography variant="body1" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             In today’s fast-paced, digitized world, organizations need transparency, security, and efficiency more than ever. Whether managing supply chains, financial records, or sensitive employee data, blockchain offers a revolutionary solution. It provides decentralized, tamper-proof records, enabling more secure, auditable, and streamlined operations.
           </Typography>
-          <Typography variant="body2" sx={{ color: '#c7c7c7', lineHeight: 1.6 }}>
+          <Typography variant="body2" sx={{fontSize: '1.05rem', color: '#c7c7c7', lineHeight: 1.6 }}>
             Fact Check: Over 55% of healthcare organizations are already using blockchain to enhance data security and improve patient care. With industries from finance to logistics joining the movement, blockchain adoption is accelerating across sectors.
           </Typography>
         </Box>
@@ -292,7 +292,7 @@ const FinwingArchitect = ({ id }) => {
         </Box>
         <Box sx={{ mb: 6 }}>
 
-          <Typography variant="body1" sx={{ color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
+          <Typography variant="body1" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Blockchain isn't just a trend—it’s a transformative technology that can improve efficiency, security, and trust across all industries.
           </Typography>
           <Typography variant="h6" sx={{ color: '#ffffff', mt: 4 }}>
