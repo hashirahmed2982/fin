@@ -45,9 +45,33 @@ const MobileRoadmap = ({ id }) => {
 
   return (
     <Container id={id} sx={{ color: 'white', textAlign: 'center', py: 4 }}>
-      <Typography variant="h6" sx={{ fontWeight: 'bold', letterSpacing: '2px' }}>
-        ROADMAP
-      </Typography>
+      <Container
+              id={id}
+              sx={{
+                maxWidth: 'xl',
+                height: 'auto',
+                color: 'white',
+                textAlign: 'center',
+              }}
+            >
+              <Box display="flex" justifyContent="center" alignItems="center" sx={{ mr: 6 }}>
+                <img
+                  src="/section.png" // Replace with your image path or URL
+                  alt="Icon"
+                  style={{ width: 100, height: 108, marginRight: 0, objectFit: 'contain', verticalAlign: 'middle' }} // Add verticalAlign and objectFit if needed
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: '#FFFFFF', // White text color
+                    fontWeight: 'bold',
+                    letterSpacing: '2px' // Adjust letter spacing
+                  }} // Remove mb and pb for better alignment
+                >
+                  ROADMAP 2025
+                </Typography>
+              </Box>
+            </Container>
       {timelineData.map((item, index) => (
         <Accordion key={index} sx={{ bgcolor: '#031625', color: 'white', my: 1 }}>
           <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}>

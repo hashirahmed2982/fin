@@ -295,9 +295,9 @@ const FinwingArchitect = ({ id }) => {
           <Typography variant="body1" sx={{ fontSize: '1.25rem',color: '#c7c7c7', lineHeight: 1.6, mb: 2 }}>
             Blockchain isn't just a trend—it’s a transformative technology that can improve efficiency, security, and trust across all industries.
           </Typography>
-          <Typography variant="h6" sx={{ color: '#ffffff', mt: 4 }}>
-            Isn’t it time your organization embraced the future?
-          </Typography>
+          {/* <Typography variant="h6" sx={{ color: '#ffffff', mt: 4 }}>
+            Isn’t it time your organization embraced the future.
+          </Typography> */}
         </Box>
       </Container>
     </Box>

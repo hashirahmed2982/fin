@@ -119,11 +119,9 @@ const Services = ({ item }) => {
             },
           }}
         >
-          <span style={{ color: '#white' }}>
-          Join the
-        </span>
-        <span style={{ color: '#1976d2' }}>
-          waitlist.
+        
+        Coming <span style={{ color: '#1976d2' }}>
+          Soon.
         </span>
         </Typography>
       )}

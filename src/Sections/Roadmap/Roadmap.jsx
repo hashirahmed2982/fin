@@ -76,7 +76,7 @@ const Roadmap = ({ id }) => {
               letterSpacing: '2px' // Adjust letter spacing
             }} // Remove mb and pb for better alignment
           >
-            ROADMAP
+            ROADMAP 2025
           </Typography>
         </Box>
       </Container>

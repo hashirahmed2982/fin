@@ -16,7 +16,7 @@ const FloatingPopup = () => {
   }, []);
 
   const handleAppointmentClick = () => {
-    window.open("https://calendly.com/your-link", "_blank");
+    window.open("https://calendly.com/theshieldtech/financeconsultancy", "_blank");
   };
 
   const handleClose = () => {
@@ -46,23 +46,20 @@ const FloatingPopup = () => {
         sx={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           p: 2,
         }}
       >
-        <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '16px' }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '16px' ,textAlign: 'center' }}>
           Make an Appointment
         </Typography>
-        <CloseIcon
-          sx={{ cursor: 'pointer', color: '#fff', fontSize: '20px' }}
-          onClick={handleClose}
-        />
+        
       </Box>
       <Typography
         variant="body2"
         sx={{ px: 2, mb: 1, color: '#f0f0f0', lineHeight: '1.5' }}
       >
-        Need expert advice? Book a meeting with us now to discuss your goals and plans!
+        Need expert advice? Book a Free Meeting with Finwing Consultants to discuss your Web3.0 Goals.
       </Typography>
       <Button
         onClick={handleAppointmentClick}
@@ -81,6 +78,10 @@ const FloatingPopup = () => {
       >
         Book Now
       </Button>
+      <CloseIcon
+          sx={{ position: "absolute", top: 10, right: 10,cursor: 'pointer', color: '#fff', fontSize: '20px' }}
+          onClick={handleClose}
+        />
     </Box>
   );
 };

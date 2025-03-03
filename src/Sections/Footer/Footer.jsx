@@ -3,8 +3,8 @@ import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import RedditIcon from "@mui/icons-material/Reddit";
-import LanguageIcon from "@mui/icons-material/Language";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Logo from "/logo3.png"; // Import your logo
 
 const Footer = () => {
@@ -35,14 +35,14 @@ const Footer = () => {
           </Box>
           <Box sx={{ display: "flex", gap: 1, mt: 1, justifyContent: { xs: "center", md: "flex-start" } }}>
             {[
-              { icon: <YouTubeIcon />, label: "YouTube" },
-              { icon: <GitHubIcon />, label: "GitHub" },
-              { icon: <RedditIcon />, label: "Reddit" },
-              { icon: <TelegramIcon />, label: "Telegram" },
+              // { icon: <YouTubeIcon />, label: "YouTube" },
+              // { icon: <GitHubIcon />, label: "GitHub" },
+              { icon: <InstagramIcon />, label: "Instagram",link: "https://www.instagram.com/finwing.xyz/" },
+              { icon: <LinkedInIcon />, label: "LinkedIn" ,link: "http://linkedin.com/company/finwingxyz/"},
             ].map((item, index) => (
               <IconButton
                 key={index}
-                href="#"
+                href={item.link}
                 aria-label={item.label}
                 sx={{
                   bgcolor: "rgba(255, 255, 255, 0.1)",
@@ -87,13 +87,11 @@ const Footer = () => {
             Contact Us
           </Typography>
           <Typography color="#848895" sx={{ mb: 1 }}>
-            support@finwing.com
+          support@finwing.xyz
           </Typography>
-          <Typography color="#848895" sx={{ mb: 1 }}>
-            +1 (123) 456-7890
-          </Typography>
+          
           <Typography color="#848895">
-            198 West 21th Street, Suite 721 New York NY 10016
+          Metro Plaza, Viru valjak 2, Tallinn, 10111, EE
           </Typography>
         </Grid>
       </Grid>
