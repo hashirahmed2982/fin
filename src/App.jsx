@@ -25,7 +25,10 @@ import EventBannerPopup from './event';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
+  const [isEventPopupOpen, setIsEventPopupOpen] = useState(false);
 
+  const openEventPopup = () => setIsEventPopupOpen(true);
+  const closeEventPopup = () => setIsEventPopupOpen(false);
   const lockScroll = () => {
     document.body.style.overflow = 'hidden';
   };
@@ -54,7 +57,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar isEventPopupOpen={isEventPopupOpen} openEventPopup={openEventPopup}/>
       <Banner id="banner" />
       <Overview id="overview" />
       <EcosystemWrapper id="ecosystem" />
@@ -70,7 +73,7 @@ function App() {
       <ContactSection id="contact" />
       <Footer id="footer" />
        <FloatingPopup></FloatingPopup> 
-       <EventBannerPopup></EventBannerPopup>
+       <EventBannerPopup isOpen={isEventPopupOpen} onClose={closeEventPopup}></EventBannerPopup>
     </>
   );
 }

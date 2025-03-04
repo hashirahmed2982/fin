@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,10 +14,25 @@ import NavigatorIcon from "/navigator1.png";
 import ArchitectIcon from "/architect1.png";
 import AcceleratorIcon from "/accelarator1.png";
 import FoundryIcon from "/foundry1.png";
+import EventIcon from "@mui/icons-material/Event";
 import InsightsIcon from "/insights1.png";
 import { Menu } from "@mui/material";
+import { Button } from "react-scroll";
+import { keyframes } from "@mui/material/styles";
 
-const Navbar = () => {
+// Define animations
+const pulseAnimation = keyframes`
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+`;
+
+const glowAnimation = keyframes`
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+`;
+const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [ecosystemHover, setEcosystemHover] = useState(false);
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -110,6 +126,35 @@ const Navbar = () => {
               </>
             ) : (
               <>
+                {/* Show "Join Event" only if popup is NOT open */}
+                {!isEventPopupOpen && (
+                  <MenuItem
+                    onClick={openEventPopup}
+                    sx={{
+                      color: "white",
+                      border: "1px solid white",
+                      background: "transparent",
+                      fontWeight: "bold",
+                      fontSize: "12px",
+                      textTransform: "uppercase",
+                      padding: "8px 15px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                      borderRadius: "4px",
+                      animation: `${pulseAnimation} 1.5s infinite, ${glowAnimation} 2s infinite`,
+                      "&:hover": {
+                        background: "rgba(255, 255, 255, 0.1)",
+                        transform: "scale(1.05)",
+                        transition: "all 0.3s ease",
+                      },
+                    }}
+                    
+                  >
+                    Event
+                  </MenuItem>
+                )}
                 <MenuItem
                   onMouseEnter={() => setEcosystemHover(true)}
                   onMouseLeave={() => setEcosystemHover(false)}
@@ -126,23 +171,23 @@ const Navbar = () => {
                   Ecosystem
                   {ecosystemHover && (
                     <Box
-                    onMouseEnter={() => setEcosystemHover(true)}
-                    onMouseLeave={() => setEcosystemHover(false)}
-                    sx={{
-                      position: "absolute",
-                      top: "110%", // Lower submenu slightly for better spacing
-                      left: 0,
-                      backgroundColor: "#0d0d0d", // Fully blackish background
-                      color: "#ffffff",
-                      backdropFilter: "blur(15px)", // Gentle blur effect for a modern look
-                      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.5)", // Deeper shadow for a grand look
-                      borderRadius: "12px", // Rounded corners
-                      padding: "16px 0", // Consistent padding
-                      zIndex: 10,
-                      width: 260, // Slightly wider for balance
-                      transition: "all 0.3s ease", // Smooth transition for hover effects
-                    }}
-                  >
+                      onMouseEnter={() => setEcosystemHover(true)}
+                      onMouseLeave={() => setEcosystemHover(false)}
+                      sx={{
+                        position: "absolute",
+                        top: "110%", // Lower submenu slightly for better spacing
+                        left: 0,
+                        backgroundColor: "#0d0d0d", // Fully blackish background
+                        color: "#ffffff",
+                        backdropFilter: "blur(15px)", // Gentle blur effect for a modern look
+                        boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.5)", // Deeper shadow for a grand look
+                        borderRadius: "12px", // Rounded corners
+                        padding: "16px 0", // Consistent padding
+                        zIndex: 10,
+                        width: 260, // Slightly wider for balance
+                        transition: "all 0.3s ease", // Smooth transition for hover effects
+                      }}
+                    >
                       {/* Submenu Items */}
                       {[
                         { id: "navigator", label: "Navigator", icon: NavigatorIcon },
