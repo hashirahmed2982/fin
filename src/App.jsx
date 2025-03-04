@@ -21,6 +21,7 @@ import FloatingPopup from './popup';
 import EcosystemWrapper from './Sections/Ecosystem/eco';
 import RoadmapWrapper from './Sections/Roadmap/road';
 import ContactSection from './Sections/Footer/Contact';
+import EventBannerPopup from './event';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
@@ -69,6 +70,7 @@ function App() {
       <ContactSection id="contact" />
       <Footer id="footer" />
        <FloatingPopup></FloatingPopup> 
+       <EventBannerPopup></EventBannerPopup>
     </>
   );
 }
