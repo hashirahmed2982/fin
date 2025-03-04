@@ -29,30 +29,12 @@ function App() {
 
   const openEventPopup = () => setIsEventPopupOpen(true);
   const closeEventPopup = () => setIsEventPopupOpen(false);
-  const lockScroll = () => {
-    document.body.style.overflow = 'hidden';
-  };
-
-  const unlockScroll = () => {
-    document.body.style.overflow = 'auto';
-  };
-
+ 
   const handleIndexChange = (index) => {
-    if (index < 1 && index > 0) {
-      setIsScrollLocked(false);
-      lockScroll();
-    } else {
-      setIsScrollLocked(false);
-      unlockScroll();
-    }
+    
   };
 
-  useEffect(() => {
-    return () => {
-      unlockScroll(); // Ensure scroll is unlocked when the component unmounts
-    };
-  }, []);
-
+  
 
 
   return (

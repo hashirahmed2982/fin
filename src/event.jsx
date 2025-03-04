@@ -6,18 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const EventBannerPopup = ({ isOpen, onClose }) => {
   const imageUrl = "/event.jpg";
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"; // Lock scroll
-    } else {
-      document.body.style.overflow = "auto"; // Unlock scroll
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // Ensure scroll is unlocked when unmounted
-    };
-  }, [isOpen]);
-
+  
   const onJoinClick = () => {
     window.open("https://lu.ma/ok4bhccz", "_blank");
   };
