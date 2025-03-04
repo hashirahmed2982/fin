@@ -75,7 +75,7 @@ body {
     }
   }
   .tl-item:hover .tl-year {
-    top: 20%;
+    top: 8%;
     transition: top 0.5s ease; /* Smooth transition for top change */
   }
   .tl-content {
@@ -84,7 +84,7 @@ body {
     z-index: 1;
     text-align: center;
     margin: 0 1.618em;
-    top: 35%;
+    top: 15%;
     opacity: 0;
   
     h1 {
