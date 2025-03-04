@@ -25,7 +25,7 @@ import EventBannerPopup from './event';
 
 function App() {
   const [isScrollLocked, setIsScrollLocked] = useState(false);
-  const [isEventPopupOpen, setIsEventPopupOpen] = useState(false);
+  const [isEventPopupOpen, setIsEventPopupOpen] = useState(true);
 
   const openEventPopup = () => setIsEventPopupOpen(true);
   const closeEventPopup = () => setIsEventPopupOpen(false);
