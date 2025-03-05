@@ -4,7 +4,7 @@ import { Dialog, DialogContent, Box, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const EventBannerPopup = ({ isOpen, onClose }) => {
-  const imageUrl = "/event.jpg";
+  const imageUrl = "/event1.jpg";
 
   
   const onJoinClick = () => {
