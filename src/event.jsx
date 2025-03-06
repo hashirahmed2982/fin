@@ -6,7 +6,6 @@ import CloseIcon from "@mui/icons-material/Close";
 const EventBannerPopup = ({ isOpen, onClose }) => {
   const imageUrl = "/event1.jpg";
 
-  
   const onJoinClick = () => {
     window.open("https://lu.ma/ok4bhccz", "_blank");
   };
@@ -21,7 +20,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
         "& .MuiDialog-paper": {
           borderRadius: "12px",
           overflow: "hidden",
-          maxWidth: "30vw",
+          maxWidth: { xs: "90vw", sm: "30vw" }, // Responsive maxWidth
         },
       }}
     >
@@ -46,7 +45,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
         <Box
           sx={{
             position: "absolute",
-            bottom: 76,
+            bottom: { xs: 40, sm: 76 }, // Adjust button position for mobile
             left: "50%",
             transform: "translateX(-50%)",
             zIndex: 2,
@@ -69,6 +68,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
                 border: "2px solid white",
                 background: "rgba(255, 255, 255, 0.2)",
               },
+              fontSize: { xs: "0.8rem", sm: "1rem" }, // Responsive font size
             }}
           >
             Join Event
@@ -83,7 +83,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
           sx={{
             width: "100%",
             height: "100%",
-            maxHeight: "90vh",
+            maxHeight: { xs: "80vh", sm: "90vh" }, // Adjust image height for mobile
             objectFit: "contain",
           }}
         />
