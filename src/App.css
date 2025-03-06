@@ -61,11 +61,11 @@
 }
 @media (max-width: 600px) {
   .carousel-images{
-    max-height: 250px;
+    max-height: 200px;
 
   }
   .carousel-images img {
-    max-height: 250px;
+    max-height: 200px;
   }
 
   .dot {

@@ -96,6 +96,36 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             {isMobile ? (
               <>
+              {/* Show "Join Event" only if popup is NOT open
+              {!isEventPopupOpen && (
+                  <MenuItem
+                    onClick={openEventPopup}
+                    sx={{
+                      maxHeight: '5px',
+                      color: "white",
+                      border: "1px solid white",
+                      background: "transparent",
+                      fontWeight: "bold",
+                      fontSize: "10px",
+                      textTransform: "uppercase",
+                      padding: "6px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      position: "relative",
+                      borderRadius: "4px",
+                      animation: `${pulseAnimation} 1.5s infinite, ${glowAnimation} 2s infinite`,
+                      "&:hover": {
+                        background: "rgba(255, 255, 255, 0.1)",
+                        transform: "scale(1.05)",
+                        transition: "all 0.3s ease",
+                      },
+                    }}
+                    
+                  >
+                    Event
+                  </MenuItem>
+                )} */}
                 <IconButton color="inherit" onClick={handleMenuOpen}>
                   <MenuIcon />
                 </IconButton>

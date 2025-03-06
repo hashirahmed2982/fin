@@ -51,7 +51,7 @@ const Overview = ({ id }) => {
       }}
     >
       {/* Card 1: Manage */}
-      <Grid item xs={12} sm={3.5} sx={{ display: "flex", justifyContent: "center",mr:1 }}>
+      <Grid item xs={12} sm={3.5} sx={{ display: "flex", justifyContent: "center",mr: { xs: 0, sm: 1 }, }}>
         <Box
           sx={{
             backgroundColor: "#1E1E1E",
@@ -91,7 +91,7 @@ const Overview = ({ id }) => {
       </Grid>
 
       {/* Card 3: Stay */}
-      <Grid item xs={12} sm={3.5} sx={{ display: "flex", justifyContent: "center" ,ml:1}}>
+      <Grid item xs={12} sm={3.5} sx={{ display: "flex", justifyContent: "center" ,ml: { xs: 0, sm: 1 },}}>
         <Box
           sx={{
             backgroundColor: "#1E1E1E",

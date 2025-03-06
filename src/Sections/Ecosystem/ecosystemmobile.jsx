@@ -66,7 +66,7 @@ const EcosystemMobile = ({ id }) => {
   return (
     <Container id={id} sx={{ textAlign: 'center', color: 'white', mt: 4 }}>
       <Box display="flex" justifyContent="center" alignItems="center" mb={3}>
-        <img src="/section.png" alt="Icon" style={{ width: 80, height: 88, marginRight: 10 }} />
+        <img src="/icon.png" alt="Icon" style={{ width: 75, height: 30, marginRight: 10 }} />
         <Typography variant="h6" fontWeight="bold" letterSpacing={2}>ECOSYSTEM</Typography>
       </Box>
 

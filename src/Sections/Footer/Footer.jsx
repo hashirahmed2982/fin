@@ -8,6 +8,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Logo from "/logo3.png"; // Import your logo
 
 const Footer = () => {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      
+    }
+  };
   return (
     <Box
       sx={{
@@ -37,8 +44,8 @@ const Footer = () => {
             {[
               // { icon: <YouTubeIcon />, label: "YouTube" },
               // { icon: <GitHubIcon />, label: "GitHub" },
-              { icon: <InstagramIcon />, label: "Instagram",link: "https://www.instagram.com/finwing.xyz/" },
-              { icon: <LinkedInIcon />, label: "LinkedIn" ,link: "http://linkedin.com/company/finwingxyz/"},
+              { icon: <InstagramIcon />, label: "Instagram", link: "https://www.instagram.com/finwing.xyz/" },
+              { icon: <LinkedInIcon />, label: "LinkedIn", link: "http://linkedin.com/company/finwingxyz/" },
             ].map((item, index) => (
               <IconButton
                 key={index}
@@ -70,15 +77,20 @@ const Footer = () => {
           <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
             Quick Links
           </Typography>
-          {["Ecosystem", "Newsletter", "Contact us", "Privacy Policy"].map(
+          {[{ name: "Ecosystem", link: "ecosystem" }, { name: "Newsletter", link: "concluding" }, { name: "Contact us", link: "contact" }].map(
             (link, index) => (
               <Typography key={index} sx={{ mb: 1 }}>
-                <Link href="#" color="#848895" underline="hover">
-                  {link}
+                <Link onClick={() => handleScroll(link.link)} color="#848895" underline="hover">
+                  {link.name}
                 </Link>
               </Typography>
             )
           )}
+          <Typography  sx={{ mb: 1 }}>
+            <Link href="/finwingpp.pdf" color="#848895" underline="hover">
+              Privacy Policy
+            </Link>
+          </Typography>
         </Grid>
 
         {/* Right Section */}
@@ -87,11 +99,11 @@ const Footer = () => {
             Contact Us
           </Typography>
           <Typography color="#848895" sx={{ mb: 1 }}>
-          support@finwing.xyz
+            support@finwing.xyz
           </Typography>
-          
+
           <Typography color="#848895">
-          Metro Plaza, Viru valjak 2, Tallinn, 10111, EE
+            Metro Plaza, Viru valjak 2, Tallinn, 10111, EE
           </Typography>
         </Grid>
       </Grid>
