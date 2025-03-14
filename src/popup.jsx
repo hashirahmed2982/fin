@@ -16,7 +16,7 @@ const FloatingPopup = () => {
   }, []);
 
   const handleAppointmentClick = () => {
-    window.open("https://calendly.com/theshieldtech/financeconsultancy", "_blank");
+    window.open("https://calendly.com/theshieldtech/finwingconsultancy", "_blank");
   };
 
   const handleClose = () => {

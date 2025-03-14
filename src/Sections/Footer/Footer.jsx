@@ -46,6 +46,7 @@ const Footer = () => {
               // { icon: <GitHubIcon />, label: "GitHub" },
               { icon: <InstagramIcon />, label: "Instagram", link: "https://www.instagram.com/finwing.xyz/" },
               { icon: <LinkedInIcon />, label: "LinkedIn", link: "http://linkedin.com/company/finwingxyz/" },
+              { icon: <TelegramIcon />, label: "LinkedIn", link: "https://t.me/finwingfree" },
             ].map((item, index) => (
               <IconButton
                 key={index}
