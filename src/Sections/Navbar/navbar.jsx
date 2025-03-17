@@ -157,7 +157,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
             ) : (
               <>
                 {/* Show "Join Event" only if popup is NOT open */}
-                {!isEventPopupOpen && (
+                {/* {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
@@ -184,7 +184,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                   >
                     Event
                   </MenuItem>
-                )}
+                )} */}
                 <MenuItem
                   onMouseEnter={() => setEcosystemHover(true)}
                   onMouseLeave={() => setEcosystemHover(false)}

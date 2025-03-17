@@ -55,7 +55,10 @@ function App() {
       <ContactSection id="contact" />
       <Footer id="footer" />
        <FloatingPopup></FloatingPopup> 
-       <EventBannerPopup isOpen={isEventPopupOpen} onClose={closeEventPopup}></EventBannerPopup>
+      
+      
+       {/* <EventBannerPopup isOpen={isEventPopupOpen} onClose={closeEventPopup}></EventBannerPopup>
+        */}
     </>
   );
 }
