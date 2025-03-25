@@ -96,11 +96,12 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             {isMobile ? (
               <>
-              {/* Show "Join Event" only if popup is NOT open
+              {/* { Show "Join Event" only if popup is NOT open */}
               {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
+                      mr: 3,
                       maxHeight: '5px',
                       color: "white",
                       border: "1px solid white",
@@ -123,9 +124,9 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     }}
                     
                   >
-                    Event
+                    Join Waitlist
                   </MenuItem>
-                )} */}
+                )} 
                 <IconButton color="inherit" onClick={handleMenuOpen}>
                   <MenuIcon />
                 </IconButton>
@@ -157,7 +158,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
             ) : (
               <>
                 {/* Show "Join Event" only if popup is NOT open */}
-                {/* {!isEventPopupOpen && (
+                {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
@@ -182,9 +183,9 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     }}
                     
                   >
-                    Event
+                    Join Waitlist
                   </MenuItem>
-                )} */}
+                )}
                 <MenuItem
                   onMouseEnter={() => setEcosystemHover(true)}
                   onMouseLeave={() => setEcosystemHover(false)}

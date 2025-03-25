@@ -4,10 +4,10 @@ import { Dialog, DialogContent, Box, Button, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const EventBannerPopup = ({ isOpen, onClose }) => {
-  const imageUrl = "/event1.jpg";
+  const imageUrl = "/nft.jpg";
 
   const onJoinClick = () => {
-    window.open("https://lu.ma/ok4bhccz", "_blank");
+    window.open("https://forms.gle/eyPoSxCM5Nisi4718", "_blank");
   };
 
   return (
@@ -71,7 +71,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
               fontSize: { xs: "0.8rem", sm: "1rem" }, // Responsive font size
             }}
           >
-            Join Event
+            Join Waitlist!
           </Button>
         </Box>
 
