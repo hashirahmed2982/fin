@@ -124,7 +124,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     }}
                     
                   >
-                    Join Waitlist
+                    Join Whitelist
                   </MenuItem>
                 )} 
                 <IconButton color="inherit" onClick={handleMenuOpen}>
@@ -183,7 +183,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     }}
                     
                   >
-                    Join Waitlist
+                    Join Whitelist
                   </MenuItem>
                 )}
                 <MenuItem

@@ -71,7 +71,7 @@ const EventBannerPopup = ({ isOpen, onClose }) => {
               fontSize: { xs: "0.8rem", sm: "1rem" }, // Responsive font size
             }}
           >
-            Join Waitlist!
+            Join Whitelist!
           </Button>
         </Box>
 
