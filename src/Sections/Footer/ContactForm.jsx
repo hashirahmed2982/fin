@@ -103,29 +103,30 @@ const ContactForm = ({ open, onClose }) => {
               }}
             />
             <TextField
-              fullWidth
-              label="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              variant="outlined"
-              margin="dense"
-              size="small"
-              multiline
-              rows={4}
-              sx={{
-                mb: 2,
-                bgcolor: "rgba(255, 255, 255, 0.05)",
-                borderRadius: "4px",
-                input: { color: "#fff" },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "rgba(255, 255, 255, 0.2)" },
-                  "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.4)" },
-                  "&.Mui-focused fieldset": { borderColor: "#3972ff" },
-                },
-                "& label": { color: "#b3b3b3" },
-              }}
-            />
+  fullWidth
+  label="Message"
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  variant="outlined"
+  margin="dense"
+  size="small"
+  multiline
+  rows={4}
+  sx={{
+    mb: 2,
+    bgcolor: "rgba(255, 255, 255, 0.05)",
+    borderRadius: "4px",
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": { borderColor: "rgba(255, 255, 255, 0.2)" },
+      "&:hover fieldset": { borderColor: "rgba(255, 255, 255, 0.4)" },
+      "&.Mui-focused fieldset": { borderColor: "#3972ff" },
+      "& textarea": { color: "#fff" } // 🔧 Fix for multiline text color
+    },
+    "& label": { color: "#b3b3b3" },
+  }}
+/>
+
             <Button type="submit" variant="outlined" fullWidth sx={{
               mt: 2, backgroundColor: "#121212", color: "white", borderColor: "rgba(255, 255, 255, 0.2)", // Set border color to white
               "&:hover": {

@@ -97,7 +97,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
             {isMobile ? (
               <>
               {/* { Show "Join Event" only if popup is NOT open */}
-              {!isEventPopupOpen && (
+              {/* {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
@@ -126,7 +126,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                   >
                     Join Whitelist
                   </MenuItem>
-                )} 
+                )}  */}
                 <IconButton color="inherit" onClick={handleMenuOpen}>
                   <MenuIcon />
                 </IconButton>
@@ -147,9 +147,9 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                   <MenuItem onClick={() => handleScroll("ecosystem")}>
                     Ecosystem
                   </MenuItem>
-                  <MenuItem onClick={() => handleScroll("roadmap")}>
+                  {/* <MenuItem onClick={() => handleScroll("roadmap")}>
                     Roadmap
-                  </MenuItem>
+                  </MenuItem> */}
                   <MenuItem onClick={() => handleScroll("contact")}>
                     Contact
                   </MenuItem>
@@ -158,7 +158,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
             ) : (
               <>
                 {/* Show "Join Event" only if popup is NOT open */}
-                {!isEventPopupOpen && (
+                {/* {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
@@ -185,7 +185,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                   >
                     Join Whitelist
                   </MenuItem>
-                )}
+                )} */}
                 <MenuItem
                   onMouseEnter={() => setEcosystemHover(true)}
                   onMouseLeave={() => setEcosystemHover(false)}
@@ -257,7 +257,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     </Box>
                   )}
                 </MenuItem>
-
+{/* 
                 <MenuItem
                   onClick={() => handleScroll("roadmap")}
                   sx={{
@@ -271,7 +271,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                   }}
                 >
                   Roadmap
-                </MenuItem>
+                </MenuItem> */}
 
                 <MenuItem
                   onClick={() => handleScroll("contact")}
