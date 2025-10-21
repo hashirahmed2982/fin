@@ -67,7 +67,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           {/* Logo and Title */}
           <Box
-            sx={{ display: "flex", alignItems: "center", color: "inherit" }}
+            sx={{ display: "flex", alignItems: "center", color: "inherit", cursor: "pointer" }}
             onClick={() => handleScroll("banner")}
           >
             <img
@@ -80,24 +80,41 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                 marginRight: "10px",
               }}
             />
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 700,
-                letterSpacing: 1,
-                color: "#ffffff",
-              }}
-            >
-              Finwing
-            </Typography>
+
+            <Box sx={{ display: "flex", flexDirection: "column", lineHeight: 1 ,alignItems: "flex-start"}}>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: 700,
+                  letterSpacing: 1,
+                  color: "#ffffff",
+                }}
+              >
+                Finwing
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{
+                  
+                  fontSize: "0.75rem",
+                  fontWeight: 300,
+            fontFamily: "PolySans, sans-serif",
+            color: "#B0B7D6",
+            textShadow: "0px 0px 5px rgba(255, 255, 255, 0.3)",
+                }}
+              >
+                by ShieldTech
+              </Typography>
+            </Box>
           </Box>
+
 
           {/* Menu icon and menu items */}
           <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
             {isMobile ? (
               <>
-              {/* { Show "Join Event" only if popup is NOT open */}
-              {/* {!isEventPopupOpen && (
+                {/* { Show "Join Event" only if popup is NOT open */}
+                {/* {!isEventPopupOpen && (
                   <MenuItem
                     onClick={openEventPopup}
                     sx={{
@@ -257,7 +274,7 @@ const Navbar = ({ isEventPopupOpen, openEventPopup }) => {
                     </Box>
                   )}
                 </MenuItem>
-{/* 
+                {/* 
                 <MenuItem
                   onClick={() => handleScroll("roadmap")}
                   sx={{

@@ -8,7 +8,7 @@ const Map = ({id}) => {
   const [clients, setClients] = useState(0);
   const [revenue, setRevenue] = useState(0);
   const cardRef = useRef(null);
-  const targetClients = 25;
+  const targetClients = 31;
   const targetRevenue = 180000; // $180k represented in cents to count properly
   // Function to update mouse position and border color intensity based on cursor proximity
   useEffect(() => {

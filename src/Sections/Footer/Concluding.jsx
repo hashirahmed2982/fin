@@ -73,7 +73,7 @@ const Concluding = ({ id }) => {
             </Button>
           </Box>
           {message && (
-            <Typography variant="body2" sx={{ mt: 2, color: message.includes("success") ? "#4caf50" : "#ff1744" }}>
+            <Typography variant="body2" sx={{ mt: 2, color: message.includes("success") ? "#ffffffff" : "#ff1744" }}>
               {message}
             </Typography>
           )}

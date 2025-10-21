@@ -100,7 +100,7 @@ const Footer = () => {
             Contact Us
           </Typography>
           <Typography color="#848895" sx={{ mb: 1 }}>
-            support@finwing.xyz
+            contact@theshieldtech.com
           </Typography>
 
           <Typography color="#848895">

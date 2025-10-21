@@ -10,6 +10,42 @@ import BackgroundImage from '/foundry1.png'; // Replace with your background ima
 import { motion } from 'framer-motion';
 const FinwingFoundry = ({ id }) => {
   const isMobile = useMediaQuery('(max-width:768px)');
+
+  // Animation variants for images
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  };
   
   return (
     <Box id={id} sx={{ backgroundColor: '#08080e', py: 8 }}>
@@ -104,21 +140,26 @@ const FinwingFoundry = ({ id }) => {
 <Container maxWidth="lg" sx={{ my: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-          <Box
-              component="img"
-              src="/DAO-F.png"
-
-              sx={{
-                maxHeight: '700px',
-                maxWidth: '800px',
-                width: '100%',
-                height: '120%',
-                
-                borderRadius: 3,
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-                objectFit: 'contain',
-              }}
-            />
+          <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideFromLeft}
+            >
+              <Box
+                component="img"
+                src="/DAO-F.png"
+                sx={{
+                  maxHeight: '700px',
+                  maxWidth: '800px',
+                  width: '100%',
+                  height: '120%',
+                  borderRadius: 3,
+                  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                  objectFit: 'contain',
+                }}
+              />
+            </motion.div>
             {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/ta.png" alt="Airdrop Campaign" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box> */}
@@ -152,20 +193,26 @@ const FinwingFoundry = ({ id }) => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-          <Box
-              component="img"
-              src="/tfw.png"
-
-              sx={{
-                maxHeight: '400px',
-                maxWidth: '500px',
-                width: '100%',
-                height: '100%',
-                borderRadius: 3,
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-                objectFit: 'contain',
-              }}
-            />
+          <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideFromRight}
+            >
+              <Box
+                component="img"
+                src="/tfw.png"
+                sx={{
+                  maxHeight: '400px',
+                  maxWidth: '500px',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 3,
+                  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                  objectFit: 'contain',
+                }}
+              />
+            </motion.div>
             {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/tfw.png" alt="Tokenomics Flywheel" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box> */}
@@ -177,20 +224,26 @@ const FinwingFoundry = ({ id }) => {
       <Container maxWidth="lg" sx={{ my: 8 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-          <Box
-              component="img"
-              src="/ta.png"
-
-              sx={{
-                maxHeight: '400px',
-                maxWidth: '500px',
-                width: '100%',
-                height: '100%',
-                borderRadius: 3,
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-                objectFit: 'contain',
-              }}
-            />
+          <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideFromLeft}
+            >
+              <Box
+                component="img"
+                src="/ta.png"
+                sx={{
+                  maxHeight: '400px',
+                  maxWidth: '500px',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 3,
+                  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                  objectFit: 'contain',
+                }}
+              />
+            </motion.div>
             {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/ta.png" alt="Airdrop Campaign" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box> */}
@@ -360,20 +413,26 @@ const FinwingFoundry = ({ id }) => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={6} sx={{ mt: 5 }}>
-            <Box
-              component="img"
-              src="/dtm1.png"
-
-              sx={{
-                maxHeight: '400px',
-                maxWidth: '500px',
-                width: '100%',
-                height: '100%',
-                borderRadius: 3,
-                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
-                objectFit: 'contain',
-              }}
-            />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={slideFromRight}
+            >
+              <Box
+                component="img"
+                src="/dtm1.png"
+                sx={{
+                  maxHeight: '400px',
+                  maxWidth: '500px',
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: 3,
+                  boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.5)',
+                  objectFit: 'contain',
+                }}
+              />
+            </motion.div>
             {/* <Box sx={{ textAlign: 'center' }}>
               <img src="/dtm1.png" alt="DAO Treasury Management" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box> */}
